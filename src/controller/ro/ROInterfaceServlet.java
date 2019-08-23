@@ -12,13 +12,13 @@ import common.JSFiles;
 import common.TypeOfUser;
 import common.Variable;
 
-public class DanhSachHoSoROServlet extends HttpServlet{
+public class ROInterfaceServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
     
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DanhSachHoSoROServlet() {
+    public ROInterfaceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,6 +27,11 @@ public class DanhSachHoSoROServlet extends HttpServlet{
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		/**
+		 * Trả về giao diện cho người dùng
+		 */
+		
 		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.RO);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.RO_HANDLE);
@@ -38,6 +43,8 @@ public class DanhSachHoSoROServlet extends HttpServlet{
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		/**
+		 * Không làm gì cả
+		 */
 	}
 }

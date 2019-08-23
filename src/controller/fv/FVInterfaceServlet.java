@@ -20,13 +20,13 @@ import model.bo.FVBO;
  * Servlet implementation class DanhSachHoSoFVServlet
  */
 //@WebServlet("/DanhSachHoSoFVServlet")
-public class DanhSachHoSoFVServlet extends HttpServlet {
+public class FVInterfaceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DanhSachHoSoFVServlet() {
+    public FVInterfaceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,6 +35,10 @@ public class DanhSachHoSoFVServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		/**
+		 *	Trả về giao diện cho người dùng 
+		 */
+		
 		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.FV);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.FV_HANDLE);
@@ -46,10 +50,14 @@ public class DanhSachHoSoFVServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		FVBO fvBo = new FVBO();
-		List<HoSoFV> list ;
-		list = fvBo.dsHs();
-		System.out.println("some things");
+//		FVBO fvBo = new FVBO();
+//		List<HoSoFV> list ;
+//		list = fvBo.dsHs();
+//		System.out.println("some things");
+		
+		/**
+		 * Không làm gì cả
+		 */
 		
 	}
 

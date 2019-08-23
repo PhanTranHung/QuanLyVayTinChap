@@ -4,6 +4,8 @@
   <welcome-file-list>
     <welcome-file>frame.jsp</welcome-file>
   </welcome-file-list>
+  
+  
   <servlet>
     <description></description>
     <display-name>login</display-name>
@@ -15,16 +17,20 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
+  
   <servlet>
     <description></description>
     <display-name>homesale</display-name>
     <servlet-name>homesale</servlet-name>
-    <servlet-class>controller.sale.ThongTinKhachHangServlet</servlet-class>
+    <servlet-class>controller.sale.HomeSaleServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>homesale</servlet-name>
     <url-pattern>/homesale</url-pattern>
   </servlet-mapping>
+  
+  
+  
   
   <servlet>
     <description></description>
@@ -39,9 +45,67 @@
   
   <servlet>
     <description></description>
+    <display-name>themcongty</display-name>
+    <servlet-name>themcongty</servlet-name>
+    <servlet-class>controller.admin.ThemCongTyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>themcongty</servlet-name>
+    <url-pattern>/themcongty</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>themkhachhang</display-name>
+    <servlet-name>themkhachhang</servlet-name>
+    <servlet-class>controller.admin.ThemKhachHangServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>themkhachhang</servlet-name>
+    <url-pattern>/themkhachhang</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>danhsachcongty</display-name>
+    <servlet-name>danhsachcongty</servlet-name>
+    <servlet-class>controller.admin.DanhSachCongTyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>danhsachcongty</servlet-name>
+    <url-pattern>/danhsachcongty</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>danhsachhoso</display-name>
+    <servlet-name>danhsachhoso</servlet-name>
+    <servlet-class>controller.admin.DanhSachHoSoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>danhsachhoso</servlet-name>
+    <url-pattern>/danhsachhoso</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>chitiethoso</display-name>
+    <servlet-name>chitiethoso</servlet-name>
+    <servlet-class>controller.admin.HoSoChiTietServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>chitiethoso</servlet-name>
+    <url-pattern>/chitiethoso</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+    <description></description>
     <display-name>homecv</display-name>
     <servlet-name>homecv</servlet-name>
-    <servlet-class>controller.cv.DanhSachHoSoCVServlet</servlet-class>
+    <servlet-class>controller.cv.CVInterfaceServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>homecv</servlet-name>
@@ -50,9 +114,23 @@
   
   <servlet>
     <description></description>
+    <display-name>hosothamdinhcv</display-name>
+    <servlet-name>hosothamdinhcv</servlet-name>
+    <servlet-class>controller.cv.HoSoThamDinhCVServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hosothamdinhcv</servlet-name>
+    <url-pattern>/hosothamdinhcv</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+    <description></description>
     <display-name>homefv</display-name>
     <servlet-name>homefv</servlet-name>
-    <servlet-class>controller.fv.DanhSachHoSoFVServlet</servlet-class>
+    <servlet-class>controller.fv.FVInterfaceServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>homefv</servlet-name>
@@ -61,9 +139,23 @@
   
   <servlet>
     <description></description>
+    <display-name>hosothamdinhfv</display-name>
+    <servlet-name>hosothamdinhfv</servlet-name>
+    <servlet-class>controller.fv.HoSoThamDinhFVServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hosothamdinhfv</servlet-name>
+    <url-pattern>/hosothamdinhfv</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+    <description></description>
     <display-name>homeiv</display-name>
     <servlet-name>homeiv</servlet-name>
-    <servlet-class>controller.iv.DanhSachHoSoIVServlet</servlet-class>
+    <servlet-class>controller.iv.IVInterfaceServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>homeiv</servlet-name>
@@ -72,12 +164,40 @@
   
   <servlet>
     <description></description>
+    <display-name>hosothamdinhiv</display-name>
+    <servlet-name>hosothamdinhiv</servlet-name>
+    <servlet-class>controller.iv.HoSoThamDinhIVServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hosothamdinhiv</servlet-name>
+    <url-pattern>/hosothamdinhiv</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+    <description></description>
     <display-name>homero</display-name>
     <servlet-name>homero</servlet-name>
-    <servlet-class>controller.ro.DanhSachHoSoROServlet</servlet-class>
+    <servlet-class>controller.ro.ROInterfaceServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>homero</servlet-name>
     <url-pattern>/homero</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>hosothamdinhro</display-name>
+    <servlet-name>hosothamdinhro</servlet-name>
+    <servlet-class>controller.ro.HoSoThamDinhROServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hosothamdinhro</servlet-name>
+    <url-pattern>/hosothamdinhro</url-pattern>
+  </servlet-mapping>
+  
+  
+  
 </web-app>

@@ -17,13 +17,13 @@ import common.Variable;
  * Servlet implementation class DanhSachHoSoIVServlet
  */
 //@WebServlet("/DanhSachHoSoIVServlet")
-public class DanhSachHoSoIVServlet extends HttpServlet {
+public class IVInterfaceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DanhSachHoSoIVServlet() {
+    public IVInterfaceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,6 +32,11 @@ public class DanhSachHoSoIVServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		/**
+		 * Trả về giao diện cho người dùng
+		 */
+		
 		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.IV);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.IV_HANDLE);
@@ -43,8 +48,13 @@ public class DanhSachHoSoIVServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		/**
+		 * Không làm gì hết
+		 */
+		
+//		// TODO Auto-generated method stub
+//		doGet(request, response);
 	}
 
 }

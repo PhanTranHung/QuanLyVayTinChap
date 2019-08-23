@@ -14,7 +14,6 @@ import model.bean.HoSoCV;
 import model.bean.TieuChi;
 
 public class CVDAO {
-	 ExcuteDB connect = new ExcuteDB();
 	
 	public  List<TieuChi> listTieuChi(String idHoSo){
 		

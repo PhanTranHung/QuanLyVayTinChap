@@ -14,8 +14,6 @@ import model.bean.TieuChi;
 
 public class FVDAO {
 
-	ExcuteDB connect = new ExcuteDB();
-
 	public List<TieuChi> listTieuChi() {
 		List<TieuChi> list = new ArrayList<TieuChi>();
 		ExcuteDB excuter = new ExcuteDB();
@@ -28,7 +26,6 @@ public class FVDAO {
 				tc.setTenTC(rs.getString("TenTieuChi"));
 				tc.setAlias(rs.getString("Alias"));
 				tc.setQuyen(rs.getInt("Quyen"));
-
 				list.add(tc);
 			}
 		} catch (SQLException e) {
@@ -43,9 +40,9 @@ public class FVDAO {
 		List<HoSoFV> list = new ArrayList<HoSoFV>();
 
 		ExcuteDB excuter = new ExcuteDB();
-		String sql = String.format("select Ten,KhachHang.CMNDKhachHang as CMNDKhachHang,NgaySinh,GioiTinh,LichSuFV,GhiChu,TrangThai\n" + 
-				"from KhachHang\n" + 
-				"inner join HoSo\n" + 
+		String sql = String.format("select Ten,KhachHang.CMNDKhachHang as CMNDKhachHang,NgaySinh,GioiTinh,LichSuFV,GhiChu,TrangThai " + 
+				"from KhachHang " + 
+				"inner join HoSo " + 
 				"on KhachHang.CMNDKhachHang = HoSo.CMNDKhachHang");
 		ResultSet rs = excuter.executeQuery(sql);
 		try {
@@ -71,7 +68,6 @@ public class FVDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return list;
 	}
 

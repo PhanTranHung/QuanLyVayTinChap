@@ -22,13 +22,13 @@ import model.bo.CVBO;
  * Servlet implementation class DanhSachHoSoCVServlet
  */
 //@WebServlet("/DanhSachHoSoCVServlet")
-public class DanhSachHoSoCVServlet extends HttpServlet {
+public class CVInterfaceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DanhSachHoSoCVServlet() {
+    public CVInterfaceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,6 +37,10 @@ public class DanhSachHoSoCVServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		/**
+		 *	Trả về giao diện cho người dùng 
+		 */
 		
 		System.out.println("some things");
 		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
@@ -51,13 +55,18 @@ public class DanhSachHoSoCVServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CVBO cvBo = new CVBO();
-		List<HoSoCV> list ;
-		list = cvBo.dsHS();
+
+		/**
+		 * Không làm gì cả
+		 */
 		
-		Gson gson = new Gson();
-		String json = gson.toJson(list);
-		response.getWriter().write(json);
+//		CVBO cvBo = new CVBO();
+//		List<HoSoCV> list ;
+//		list = cvBo.dsHS();
+//		
+//		Gson gson = new Gson();
+//		String json = gson.toJson(list);
+//		response.getWriter().write(json);
 	}
 
 }

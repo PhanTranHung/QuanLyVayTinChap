@@ -25,6 +25,12 @@ public class AdminInterface extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
+		/**
+		 * Trả về giao diện cho người dùng
+		 */
+		
 		RequestDispatcher rd = req.getRequestDispatcher("./AdminOffice/admininterface.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.IV);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.IV_HANDLE);
@@ -35,6 +41,11 @@ public class AdminInterface extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		/**
+		 * Không làm gì cả
+		 */
+		
 		super.doPost(req, resp);
 	}
 	

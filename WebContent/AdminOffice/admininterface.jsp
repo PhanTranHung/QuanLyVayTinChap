@@ -155,32 +155,32 @@
 										<div class="flex-grow-3 td">
 											<div class="searchitem">
 												<div class="style-scope-inner">
-													<input class="search" id='inputitem2' type="text" name="ngaysinh" placeholder="Tìm theo tên công ty">
-													<span id="searchreset" class="btnreset">x</span>
+													<input class="search" id='' type="text" name="name" placeholder="Tìm theo tên công ty">
+													<span id="" class="btnreset">x</span>
 												</div>
 											</div>
 										</div>
 										<div class="flex-grow-2 td">
 											<div class="searchitem">
 												<div class="style-scope-inner">
-													<input class="search" id='inputitem2' type="text" name="ngaysinh" placeholder="Tìm theo mã số thuế"/>
-													<span id="searchreset" class="btnreset">x</span>
+													<input class="search" id='' type="text" name="mst" placeholder="Tìm theo mã số thuế"/>
+													<span id="" class="btnreset">x</span>
 												</div>
 											</div>
 										</div>
 										<div class="flex-grow-2 td">
 											<div class="searchitem">
 												<div class="style-scope-inner">
-													<input class="search" id='inputitem2' type="text" name="ngaysinh" placeholder="Địa chỉ">
-													<span id="searchreset" class="btnreset">x</span>
+													<input class="search" id='' type="text" name="address" placeholder="Địa chỉ">
+													<span id="" class="btnreset">x</span>
 												</div>
 											</div>
 										</div>
 										<div class="flex-grow-2 td">
 											<div class="searchitem">
 												<div class="style-scope-inner">
-													<input class="search" id='inputitem2' type="text" name="ngaysinh" placeholder="Loại công ty">
-													<span id="searchreset" class="btnreset">x</span>
+													<input class="search" id='' type="text" name="type" placeholder="Loại công ty">
+													<span id="" class="btnreset">x</span>
 												</div>
 											</div>
 										</div>
@@ -241,7 +241,7 @@
 												<div class="inputitem">
 													<label for="tienvaythucte">Mã số thuế<span class="important">*</span></label>
 													<div class="inputiteminner">
-														<input id="tienvaythucte" name="mst" placeholder="Đơn vị: triệu đồng"></input>
+														<input id="tienvaythucte" name="mst" placeholder="Mã số thuế"></input>
 													</div>
 												</div>
 												<div class="inputitem">
@@ -267,7 +267,7 @@
 												</div>
 												<div class="textarea">
 													<label for="textareastatus">Tình trạng<span class="important">*</span></label>
-													<textarea id="textareastatus" placeholder="Ghi rõ lí do nếu đánh rớt" rows="8" name="ghichu" dirname="ghichu" required></textarea>
+													<textarea id="textareastatus" placeholder="Ghi rõ lí do nếu công ty không được hỗ trợ" rows="8" name="ghichu" dirname="ghichu.dir" required></textarea>
 												</div>
 											</div>
 										</div>
@@ -290,31 +290,31 @@
 													<div class="inputitem">
 														<label for="">Tên khách hàng<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" required="required" placeholder="Tên công ty"></input>
+															<input id="" name="name" required="required" placeholder="Tên khách hàng"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Địa chỉ<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder="Đơn vị: triệu đồng"></input>
+															<input id="" name="address" placeholder="Địa chỉ"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Số điện thoại xác nhận<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder="Địa chỉ công ty"></input>
+															<input id="" name="sdtxacnhan" placeholder="Số điện thoại xác nhận"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Số hợp đồng lao động<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder="Địa chỉ công ty"></input>
+															<input id="" name="sohdld" placeholder="Số hợp đồng lao động"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Hình thức nhận lương<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder="Địa chỉ công ty"></input>
+															<input id="" name="typenhanluong" placeholder="Hình thức nhận lương"></input>
 														</div>
 													</div>
 												</div>
@@ -326,25 +326,25 @@
 													<div class="inputitem">
 														<label for="">Số CMND/Hộ chiếu<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="cmnd" placeholder="Số CMND/Hộ chiếu"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Số điện thoại cá nhân<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="sdt" placeholder="Số điện thoại cá nhân"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Số sổ hộ khẩu<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="soshk" placeholder="Số sổ hộ khẩu"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Số bảo hiểm y tế<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="sobhyt" placeholder="Số bảo hiểm y tế"></input>
 														</div>
 													</div>
 												</div>
@@ -356,31 +356,31 @@
 													<div class="inputitem">
 														<label for="">Số tiền vay<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="sotienvay" placeholder="Số tiền vay"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Thời hạn vay<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="thoihanvay" placeholder="Thời hạn vay"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Mã số thuế công ty làm việc<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="mstcty" placeholder="Mã số thuế công ty làm việc"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Ngày vào làm việc<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="ngaylamviec" placeholder="Ngày vào làm việc"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Lương<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="" placeholder=""></input>
+															<input id="" name="luong" placeholder="Lương"></input>
 														</div>
 													</div>
 												</div>

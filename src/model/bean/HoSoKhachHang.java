@@ -22,8 +22,6 @@ public class HoSoKhachHang {
 		this.gioiTinh = gioiTinh;
 		this.tinhTrang = tinhTrang;
 	}
-	
-	
 	public String getTenKH() {
 		return tenKH;
 	}
@@ -48,11 +46,9 @@ public class HoSoKhachHang {
 	public void setGioiTinh(boolean gioiTinh) {
 		this.gioiTinh = gioiTinh;
 	}
-	
 	public String getTinhTrang() {
 		return tinhTrang;
 	}
-
 	public void setTinhTrang(String tinhTrang) {
 		this.tinhTrang = tinhTrang;
 	}
