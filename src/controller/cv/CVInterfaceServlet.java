@@ -43,7 +43,7 @@ public class CVInterfaceServlet extends HttpServlet {
 		 */
 		
 		System.out.println("some things");
-		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./CVOffice/cv.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.CV);
 		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.CV_INTERFACE);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.CV_HANDLE);

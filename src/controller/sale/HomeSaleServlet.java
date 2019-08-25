@@ -41,7 +41,7 @@ public class HomeSaleServlet extends HttpServlet {
 		 * Trả về giao diện cho người dùng
 		 */
 		
-		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("sale.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.SALE_PERSONAL);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.SALE_HANDLE);
 		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.SALE_INTERFACE);

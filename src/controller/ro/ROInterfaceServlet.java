@@ -32,7 +32,7 @@ public class ROInterfaceServlet extends HttpServlet{
 		 * Trả về giao diện cho người dùng
 		 */
 		
-		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./ROOffice/ro.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.RO);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.RO_HANDLE);
 		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.RO_INTERFACE);

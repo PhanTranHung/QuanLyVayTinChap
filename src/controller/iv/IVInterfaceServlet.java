@@ -37,7 +37,7 @@ public class IVInterfaceServlet extends HttpServlet {
 		 * Trả về giao diện cho người dùng
 		 */
 		
-		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./IVOffice/iv.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.IV);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.IV_HANDLE);
 		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.IV_INTERFACE);

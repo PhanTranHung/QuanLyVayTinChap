@@ -39,7 +39,7 @@ public class FVInterfaceServlet extends HttpServlet {
 		 *	Trả về giao diện cho người dùng 
 		 */
 		
-		RequestDispatcher rd = req.getRequestDispatcher("frame.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("./FVOffice/fv.jsp");
 		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.FV);
 		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.FV_HANDLE);
 		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.FV_INTERFACE);
