@@ -4,6 +4,14 @@ public class CongTy {
 	String tenCty;
 	String mSoThue;
 	String diaChi;
+	String loaiCongTy ;
+	public String getLoaiCongTy() {
+		return loaiCongTy;
+	}
+	public void setLoaiCongTy(String loaiCongTy) {
+		this.loaiCongTy = loaiCongTy;
+	}
+
 	String tinhTrang;
 	public CongTy() {
 		
@@ -15,7 +23,15 @@ public class CongTy {
 		this.diaChi = diaChi;
 		this.tinhTrang = tinhTrang;
 	}
-
+	
+	public CongTy(String tenCty, String mSoThue, String diaChi, String loaiCongTy, String tinhTrang) {
+		super();
+		this.tenCty = tenCty;
+		this.mSoThue = mSoThue;
+		this.diaChi = diaChi;
+		this.loaiCongTy = loaiCongTy;
+		this.tinhTrang = tinhTrang;
+	}
 	public String getTenCty() {
 		return tenCty;
 	}

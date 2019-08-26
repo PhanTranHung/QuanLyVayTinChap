@@ -10,6 +10,7 @@ public class HoSoKhachHang {
 	Date ngaySinh;
 	boolean gioiTinh;
 	String tinhTrang;
+	String idHoSo ;
 	
 
 	public HoSoKhachHang() {
@@ -52,6 +53,14 @@ public class HoSoKhachHang {
 	}
 	public void setTinhTrang(String tinhTrang) {
 		this.tinhTrang = tinhTrang;
+	}
+
+	public String getIdHoSo() {
+		return idHoSo;
+	}
+
+	public void setIdHoSo(String idHoSo) {
+		this.idHoSo = idHoSo;
 	}
 	
 	
