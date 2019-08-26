@@ -14,7 +14,7 @@ $(document).ready(function(){
 		})
 	}
 	
-//	var tabbar = $('#lisitems');
+	var tabbar = $('#lisitems');
 //	listObj = JSON.parse(listObj);
 //	tachObj(listObj);
 //	setListItem(listObj, tabbar);
