@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ExcuteDB {
-	String url = "jdbc:sqlserver://localhost:1433;databaseName=QuanLyVayTinChap";
+	String url = "jdbc:sqlserver://localhost:1433;databaseName=ChoVayNangLai";
 	String userName = "sa";
 	String password = "123";
 	
@@ -37,10 +37,10 @@ public class ExcuteDB {
 			e.printStackTrace();
 			if(connection != null) {try {connection.close();} catch (SQLException e1) {e1.printStackTrace();}}
 			if(stmt != null) {try {stmt.close();} catch (SQLException e1) {e1.printStackTrace();}}
-		} finally  {
-			if(connection != null) {try {connection.close();} catch (SQLException e1) {e1.printStackTrace();}}
-			if(stmt != null) {try {stmt.close();} catch (SQLException e1) {e1.printStackTrace();}}
-		}
+		} //finally  {
+//			if(connection != null) {try {connection.close();} catch (SQLException e1) {e1.printStackTrace();}}
+//			if(stmt != null) {try {stmt.close();} catch (SQLException e1) {e1.printStackTrace();}}
+//		}
 		return rs;
 	}
 	
@@ -50,6 +50,7 @@ public class ExcuteDB {
 		try {
 			stmt = connection.createStatement();
 			stmt.executeUpdate(sql);
+			System.out.println("success");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			if(connection != null) {try {connection.close();} catch (SQLException e1) {e1.printStackTrace();}}

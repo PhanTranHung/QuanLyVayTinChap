@@ -43,6 +43,9 @@
 						<div id='top' class="top">
 							<button class="btn btn-info">Logout</button>
 						</div>
+						
+						
+						<form action="HomeSaleServlet" method="post">
 						<div id="row" class="row">
 							<div class="col-sm-3 center">
 								<div class="col-input stickytop">
@@ -81,6 +84,7 @@
 									</div>
 								</div>
 							</div>
+							</form>
 							<div class="col-sm-6 center">
 								<div class="container table">
 									<div class="row th stickytop">

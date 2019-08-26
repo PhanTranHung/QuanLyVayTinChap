@@ -14,61 +14,69 @@ import model.bean.TieuChi;
 
 public class FVDAO {
 
-	public List<TieuChi> listTieuChi() {
-		List<TieuChi> list = new ArrayList<TieuChi>();
+public  List<TieuChi> listTieuChi(String idHoSo){
+		
 		ExcuteDB excuter = new ExcuteDB();
-
-		String sql = String.format("select TenTieuChi,Alias,Quyen from TieuChi");
+		
+		List<TieuChi> list = new ArrayList<TieuChi>();
+		
+		String sql=	String.format("select TenTieuChi,Alias,Quyen,ThongTin,KQThamDinh from  TieuChi "
+				+ "inner join ThamDinh on TieuChi.IDTieuChi = ThamDinh.IDTieuChi "
+				+ "where IDHoSo = %s and (Quyen = 1 or Quyen = 2)", idHoSo);
 		ResultSet rs = excuter.executeQuery(sql);
 		try {
-			while (rs.next()) {
+			while(rs.next()){
 				TieuChi tc = new TieuChi();
 				tc.setTenTC(rs.getString("TenTieuChi"));
 				tc.setAlias(rs.getString("Alias"));
 				tc.setQuyen(rs.getInt("Quyen"));
+				tc.setThongTin(rs.getString("ThongTin"));
+				tc.setThamDinh(rs.getBoolean("KQThamDinh"));
 				list.add(tc);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		return list;
-
+		
+		return list ;
+		
 	}
-
-	public List<HoSoFV> dsHS() {
+	
+	public List<HoSoFV> dsHS(){
 		List<HoSoFV> list = new ArrayList<HoSoFV>();
-
+		
 		ExcuteDB excuter = new ExcuteDB();
-		String sql = String.format("select Ten,KhachHang.CMNDKhachHang as CMNDKhachHang,NgaySinh,GioiTinh,LichSuFV,GhiChu,TrangThai " + 
+		String sql=	String.format("select IDHoSo, Ten,KhachHang.CMNDKhachHang,NgaySinh,GioiTinh,LichSuCV,GhiChu,TrangThai " + 
 				"from KhachHang " + 
 				"inner join HoSo " + 
-				"on KhachHang.CMNDKhachHang = HoSo.CMNDKhachHang");
+				"on KhachHang.CMNDKhachHang = HoSo.CMNDKhachHang " +
+				"where HoSo.TrangThai = 2 or HoSo.TrangThai = 3");
 		ResultSet rs = excuter.executeQuery(sql);
+		
 		try {
-			while (rs.next()) {
-				HoSoFV hoSoFv = new HoSoFV();
-				hoSoFv.setTenKH(rs.getString("Ten"));
-				hoSoFv.setCmnd(rs.getString("CMNDKhachHang"));
+			while(rs.next()){
+				HoSoFV hoSoCv = new HoSoFV();
+				hoSoCv.setTenKH(rs.getString("Ten"));
+				hoSoCv.setCmnd(rs.getString("CMNDKhachHang"));
 				Date date = rs.getDate("NgaySinh");
-				hoSoFv.setNgaySinh(date);
-				if (rs.getInt("GioiTinh") == 0) {
-					hoSoFv.setGioiTinh(false);
+				hoSoCv.setNgaySinh(date);
+				if (rs.getInt("GioiTinh")==0) {
+					hoSoCv.setGioiTinh(false);
 				} else {
-					hoSoFv.setGioiTinh(true);
+					hoSoCv.setGioiTinh(true);
 				}
-				hoSoFv.setLichSuGoi(rs.getString("LichSuFV"));
-				hoSoFv.setNoteTinhTrang(rs.getString("GhiChu"));
-				hoSoFv.setTrangThai(rs.getInt("TrangThai"));
-				List<TieuChi> tieuChi = new FVDAO().listTieuChi();
-				hoSoFv.setList(tieuChi);
-
-				list.add(hoSoFv);
+				hoSoCv.setLichSuGoi(rs.getString("LichSuCV"));
+				hoSoCv.setNoteTinhTrang(rs.getString("GhiChu"));
+				hoSoCv.setTrangThai(rs.getInt("TrangThai"));
+				List<TieuChi> tieuChi = new CVDAO().listTieuChi(rs.getString("IDHoSo"));
+				hoSoCv.setList(tieuChi);
+				list.add(hoSoCv);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		
+		return list ;
 	}
 
 }

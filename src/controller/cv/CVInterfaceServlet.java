@@ -60,9 +60,11 @@ public class CVInterfaceServlet extends HttpServlet {
 		 * Không làm gì cả
 		 */
 		
-//		CVBO cvBo = new CVBO();
-//		List<HoSoCV> list ;
+//	CVBO cvBo = new CVBO();
+//	List<HoSoCV> list ;
 //		list = cvBo.dsHS();
+//		
+//		System.out.println("some things ");
 //		
 //		Gson gson = new Gson();
 //		String json = gson.toJson(list);
