@@ -1,6 +1,8 @@
 package controller.cv;
 
-public class HoSoThamDinhCVServlet {
+import javax.servlet.http.HttpServlet;
+
+public class HoSoThamDinhCVServlet extends HttpServlet{
 	/**
 	 * doGet: Trả về danh sách hồ sơ đang CV và đã cv dưới dạng JSON
 	 * 		Nhớ là cả thông tin thẩm định đúng or sai
