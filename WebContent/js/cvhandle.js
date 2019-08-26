@@ -14,20 +14,20 @@ $(document).ready(function(){
 		})
 	}
 	
-	var tabbar = $('#lisitems');
-	listObj = JSON.parse(listObj);
-	tachObj(listObj);
-	setListItem(listObj, tabbar);
-//	$.post("./hosothamdinhcv",
-//	{
-//	  name: "Donald Duck",
-//	  city: "Duckburg"
-//	}, function(data, status){
-//		var tabbar = $('#lisitems');
-//		listObj = JSON.parse(data);
-////		listObj = JSON.parse(listObj);
-//		setListItem(listObj, tabbar);
-//	});
+//	var tabbar = $('#lisitems');
+//	listObj = JSON.parse(listObj);
+//	tachObj(listObj);
+//	setListItem(listObj, tabbar);
+	$.post("./hosothamdinhcv",
+	{
+	  name: "Donald Duck",
+	  city: "Duckburg"
+	}, function(data, status){
+		var tabbar = $('#lisitems');
+		listObj = JSON.parse(data);
+		tachObj(listObj);
+		setListItem(listObj, tabbar);
+	});
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {
