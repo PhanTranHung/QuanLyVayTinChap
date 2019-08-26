@@ -61,9 +61,12 @@ public class HomeSaleServlet extends HttpServlet {
 		 * 		Chú ý: dựa vào typeofsubmit mà trả về danh sách tương ứng
 		 * 		nếu không có thông tin trả không tìm thấy
 		 */
-		SaleBO saleBo = new SaleBO();
-		List<CongTy> congTy = saleBo.thongTinCT();
-		System.out.println("some thing");
+		String tenKhachHang = (String) request.getAttribute("ten");
+		String ngaySinh = (String) request.getAttribute("ngaysinh");
+		String cmnd = (String) request.getAttribute("socmnd");
+		
+		response.getWriter().append(tenKhachHang+ngaySinh+cmnd);
+		
 	}
 
 }

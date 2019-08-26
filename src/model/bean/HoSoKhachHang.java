@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class HoSoKhachHang {
+	
 	String tenKH;
 	String cmnd;
 	Date ngaySinh;

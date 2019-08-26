@@ -23,7 +23,7 @@ public class CVDAO {
 		
 		String sql=	String.format("select TenTieuChi,Alias,Quyen,ThongTin,KQThamDinh from  TieuChi "
 				+ "inner join ThamDinh on TieuChi.IDTieuChi = ThamDinh.IDTieuChi "
-				+ "where IDHoSo = %s and (Quyen = 0 or Quyen = 1)", idHoSo);
+				+ "where IDHoSo = %s and (Quyen = 0 or Quyen = 2)", idHoSo);
 		ResultSet rs = excuter.executeQuery(sql);
 		try {
 			while(rs.next()){
