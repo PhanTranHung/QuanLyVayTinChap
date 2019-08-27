@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  <filter>
- <filter-name>Character Encoding Filter</filter-name>
- <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
-  <init-param>
-   <param-name>encoding</param-name>
-   <param-value>UTF-8</param-value>
-  </init-param>
-</filter>
-  
+
   <display-name>QuanLyVayTinChap</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -23,8 +15,6 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>homesale</display-name>
@@ -35,10 +25,6 @@
     <servlet-name>homesale</servlet-name>
     <url-pattern>/homesale</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>homeadmin</display-name>
@@ -49,7 +35,6 @@
     <servlet-name>homeadmin</servlet-name>
     <url-pattern>/homeadmin</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>themcongty</display-name>
@@ -60,7 +45,6 @@
     <servlet-name>themcongty</servlet-name>
     <url-pattern>/themcongty</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>themkhachhang</display-name>
@@ -71,7 +55,6 @@
     <servlet-name>themkhachhang</servlet-name>
     <url-pattern>/themkhachhang</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>danhsachcongty</display-name>
@@ -82,7 +65,6 @@
     <servlet-name>danhsachcongty</servlet-name>
     <url-pattern>/danhsachcongty</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>danhsachhoso</display-name>
@@ -93,7 +75,6 @@
     <servlet-name>danhsachhoso</servlet-name>
     <url-pattern>/danhsachhoso</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>chitiethoso</display-name>
@@ -104,10 +85,6 @@
     <servlet-name>chitiethoso</servlet-name>
     <url-pattern>/chitiethoso</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>homecv</display-name>
@@ -118,7 +95,6 @@
     <servlet-name>homecv</servlet-name>
     <url-pattern>/homecv</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>hosothamdinhcv</display-name>
@@ -129,10 +105,6 @@
     <servlet-name>hosothamdinhcv</servlet-name>
     <url-pattern>/hosothamdinhcv</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>homefv</display-name>
@@ -143,7 +115,6 @@
     <servlet-name>homefv</servlet-name>
     <url-pattern>/homefv</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>hosothamdinhfv</display-name>
@@ -154,10 +125,6 @@
     <servlet-name>hosothamdinhfv</servlet-name>
     <url-pattern>/hosothamdinhfv</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>homeiv</display-name>
@@ -168,7 +135,6 @@
     <servlet-name>homeiv</servlet-name>
     <url-pattern>/homeiv</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>hosothamdinhiv</display-name>
@@ -179,10 +145,6 @@
     <servlet-name>hosothamdinhiv</servlet-name>
     <url-pattern>/hosothamdinhiv</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>homero</display-name>
@@ -193,7 +155,6 @@
     <servlet-name>homero</servlet-name>
     <url-pattern>/homero</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>hosothamdinhro</display-name>
@@ -204,7 +165,4 @@
     <servlet-name>hosothamdinhro</servlet-name>
     <url-pattern>/hosothamdinhro</url-pattern>
   </servlet-mapping>
-  
-  
-  
 </web-app>

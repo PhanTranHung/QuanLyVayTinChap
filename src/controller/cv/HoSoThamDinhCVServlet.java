@@ -36,8 +36,21 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+
+		String idHoSo = req.getParameter("idHoSo"); 
+		String SDT = req.getParameter("SDT"); 
+		String DC = req.getParameter("DC"); 
+		String DCSHK = req.getParameter("DCSHK"); 
+		String SDTTT = req.getParameter("SDTTT"); 
+		String MST = req.getParameter("MST"); 
+		String DCCT = req.getParameter("DCCT"); 
+		String L = req.getParameter("L"); 
+		String HTNL = req.getParameter("HTNL"); 
+		String HDLD = req.getParameter("HDLD"); 
+		String BHYT = req.getParameter("BHYT"); 
+		String NVLV = req.getParameter("NVLV"); 
+		String callhistory = req.getParameter("callhistory"); 
+		String status = req.getParameter("status"); 
 	}
 	/**
 	 * doGet: Trả về danh sách hồ sơ đang CV và đã cv dưới dạng JSON
