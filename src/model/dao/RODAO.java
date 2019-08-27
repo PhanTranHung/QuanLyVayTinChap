@@ -43,7 +43,7 @@ public  List<TieuChi> listTieuChi(String idHoSo){
 		List<HoSoRO> list = new ArrayList<HoSoRO>();
 		
 		ExcuteDB excuter = new ExcuteDB();
-		String sql=	String.format("select IDHoSo, Ten,KhachHang.CMNDKhachHang,NgaySinh,GioiTinh,LichSuCV,GhiChu,TrangThai " + 
+		String sql=	String.format("select IDHoSo, Ten,KhachHang.CMNDKhachHang,NgaySinh,GioiTinh,LichSuRO,GhiChu,TrangThai " + 
 				"from KhachHang " + 
 				"inner join HoSo " + 
 				"on KhachHang.CMNDKhachHang = HoSo.CMNDKhachHang " +
@@ -53,8 +53,11 @@ public  List<TieuChi> listTieuChi(String idHoSo){
 		try {
 			while(rs.next()){
 				HoSoRO hoSoCv = new HoSoRO();
+				hoSoCv.setIdHoSo(rs.getString("IDHoSo"));
 				hoSoCv.setTenKH(rs.getString("Ten"));
 				hoSoCv.setCmnd(rs.getString("CMNDKhachHang"));
+				hoSoCv.setTinhTrang(rs.getString("TrangThai"));
+				hoSoCv.setLichSuRO(rs.getString("LichSuRO"));
 				Date date = rs.getDate("NgaySinh");
 				hoSoCv.setNgaySinh(date);
 				if (rs.getInt("GioiTinh")==0) {
