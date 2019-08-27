@@ -9,7 +9,7 @@ public class AdminDAO {
 		
 		ExcuteDB excuter = new ExcuteDB();
 		String sql=	String.format("insert into KhachHang(Ten,CMNDKhachHang) values ('%s','%s');\r\n" + 
-				"insert into HoSo(IDHoSo,CMNDKhachHang,MSThue,KhoanVayDeNghi,ThoiHanVayDeNghi) values ('%s','%s','%s','%s','%s');\r\n" + 
+				"insert into HoSo(IDHoSo,CMNDKhachHang,MSThue,KhoanVayDeNghi,ThoiHanVayDeNghi,TrangThai) values ('%s','%s','%s','%s','%s','%s');\r\n" + 
 				"insert into ThamDinh(IDHoSo,IDTieuChi,ThongTin) values('%s','001','%s');\r\n" + 
 				"insert into ThamDinh(IDHoSo,IDTieuChi,ThongTin) values('%s','002','%s');\r\n" + 
 				"insert into ThamDinh(IDHoSo,IDTieuChi,ThongTin) values('%s','003','%s');--so dang ki tren so ho khau\r\n" + 
@@ -23,7 +23,7 @@ public class AdminDAO {
 				"insert into ThamDinh(IDHoSo,IDTieuChi,ThongTin) values('%s','014','%s');--so tien vay\r\n" + 
 				"insert into ThamDinh(IDHoSo,IDTieuChi,ThongTin) values('%s','015','%s');-- thoi han vay",
 				hoSoAdmin.getTenKH(),hoSoAdmin.getCmnd(),
-				hoSoAdmin.getIdHoSo(),hoSoAdmin.getCmnd(),hoSoAdmin.getMstcty(),hoSoAdmin.getSoTienVay(),hoSoAdmin.getThoiHanVay(),
+				hoSoAdmin.getIdHoSo(),hoSoAdmin.getCmnd(),hoSoAdmin.getMstcty(),hoSoAdmin.getSoTienVay(),hoSoAdmin.getThoiHanVay(),"1",
 				hoSoAdmin.getIdHoSo(),hoSoAdmin.getSdt(),
 				hoSoAdmin.getIdHoSo(),hoSoAdmin.getAddress(),
 				hoSoAdmin.getIdHoSo(),hoSoAdmin.getSoshk(),

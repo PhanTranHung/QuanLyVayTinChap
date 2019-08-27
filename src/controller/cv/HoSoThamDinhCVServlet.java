@@ -1,17 +1,22 @@
 package controller.cv;
 
-import javax.servlet.http.HttpServlet;
-
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import common.JSFiles;
+import common.TypeOfUser;
+import common.Variable;
 import model.bean.HoSoCV;
+import model.bean.ThamDinh;
+import model.bean.TieuChi;
 import model.bo.CVBO;
 
 public class HoSoThamDinhCVServlet extends HttpServlet{
@@ -36,25 +41,26 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		CVBO cvBo = new CVBO();
+		
 		String idHoSo = req.getParameter("idHoSo"); 
-		String SDT = req.getParameter("SDT"); 
-		int sdt = Integer.parseInt(SDT);
-		String DC = req.getParameter("DC"); 
-		String DCSHK = req.getParameter("DCSHK"); 
-		String SDTTT = req.getParameter("SDTTT"); 
-		String MST = req.getParameter("MST"); 
-		String DCCT = req.getParameter("DCCT"); 
-		String L = req.getParameter("L"); 
-		String HTNL = req.getParameter("HTNL"); 
-		String HDLD = req.getParameter("HDLD"); 
-		String BHYT = req.getParameter("BHYT"); 
-		String NVLV = req.getParameter("NVLV"); 
-		String callhistory = req.getParameter("callhistory"); 
-		String status = req.getParameter("status");
-		
-		
-		
+
+		List<TieuChi> listAllTenTieuChi = cvBo.listAllTenTieuChi();
+		int listSize = listAllTenTieuChi.size();
+		for (int i = 0; i < listSize; i++) {
+			TieuChi tieuchi = listAllTenTieuChi.get(i);
+			
+			String val = req.getParameter(tieuchi.getAlias());
+
+			cvBo.ThamDinh(val, idHoSo, tieuchi.getTenTC());
+			
+		}
+		cvBo.ChuyenTrangThai(idHoSo);
+		RequestDispatcher rd = req.getRequestDispatcher("./CVOffice/cv.jsp");
+		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.CV);
+		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.CV_INTERFACE);
+		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.CV_HANDLE);
+		rd.forward(req, resp);
 	}
 	/**
 	 * doGet: Trả về danh sách hồ sơ đang CV và đã cv dưới dạng JSON

@@ -17,6 +17,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>logout</display-name>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>controller.login.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>homesale</display-name>
     <servlet-name>homesale</servlet-name>
     <servlet-class>controller.sale.HomeSaleServlet</servlet-class>

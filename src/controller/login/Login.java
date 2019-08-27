@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession();
 		String chucVu =(String) session.getAttribute("chucVu");
 		if (chucVu == null) {
-			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.html");
 			rd.forward(request, response);
 		} else {
 			switch (chucVu) {
