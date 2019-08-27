@@ -39,7 +39,7 @@
 			<div class="main">
 				<div class="container">
 					<div class="top">
-						<button class="btn btn-info">Logout</button>
+						<a href="./logout" class="btn btn-info">Logout</a>
 					</div>
 					<div class="layer-master">
 						<div id="listcustomer" class="layer-item">
@@ -288,21 +288,42 @@
 											<div class="locate-again">
 												<div class="col-input">
 													<div class="inputitem">
+														<label for="">Số CMND/Hộ chiếu<span class="important">*</span></label>
+														<div class="inputiteminner">
+															<input id="" name="cmnd" placeholder="Số CMND/Hộ chiếu"></input>
+														</div>
+													</div>
+													<div class="inputitem">
 														<label for="">Tên khách hàng<span class="important">*</span></label>
 														<div class="inputiteminner">
 															<input id="" name="name" required="required" placeholder="Tên khách hàng"></input>
 														</div>
 													</div>
 													<div class="inputitem">
-														<label for="">Địa chỉ<span class="important">*</span></label>
+														<label for="">Giới tính<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="address" placeholder="Địa chỉ"></input>
+															<div class="row">
+																<div class="col-sm-6">
+																	<input style="width: 30px;" id="male" name="gender" type="radio" value="1"/>
+																	Nam
+																</div>
+																<div class="col-sm-6">
+																	<input style="width: 30px;" id="female" name="gender" type="radio" value="0"/>
+																	Nữ
+																</div>
+															</div>
 														</div>
 													</div>
 													<div class="inputitem">
-														<label for="">Số điện thoại xác nhận<span class="important">*</span></label>
+														<label for="">Ngày sinh<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="sdtxacnhan" placeholder="Số điện thoại xác nhận"></input>
+															<input id="" name="cmnd" placeholder="Số CMND/Hộ chiếu"></input>
+														</div>
+													</div>
+													<div class="inputitem">
+														<label for="">Địa chỉ<span class="important">*</span></label>
+														<div class="inputiteminner">
+															<input id="" name="address" placeholder="Địa chỉ"></input>
 														</div>
 													</div>
 													<div class="inputitem">
@@ -324,15 +345,15 @@
 											<div class="locate-again">
 												<div class="col-input">
 													<div class="inputitem">
-														<label for="">Số CMND/Hộ chiếu<span class="important">*</span></label>
-														<div class="inputiteminner">
-															<input id="" name="cmnd" placeholder="Số CMND/Hộ chiếu"></input>
-														</div>
-													</div>
-													<div class="inputitem">
 														<label for="">Số điện thoại cá nhân<span class="important">*</span></label>
 														<div class="inputiteminner">
 															<input id="" name="sdt" placeholder="Số điện thoại cá nhân"></input>
+														</div>
+													</div>
+													<div class="inputitem">
+														<label for="">Số điện thoại xác nhận<span class="important">*</span></label>
+														<div class="inputiteminner">
+															<input id="" name="sdtxacnhan" placeholder="Số điện thoại xác nhận"></input>
 														</div>
 													</div>
 													<div class="inputitem">

@@ -1,33 +1,36 @@
 $(document).ready(function(){
 	listObj = `[{"lichSuGoi":"2018-04-20","noteTinhTrang":"khach hang khong song tai dia chi cung cap","trangThai":2,"list":[],"tenKH":"Le Thi Thanh Ha","cmnd":"125478546","ngaySinh":"Aug 15, 1976","gioiTinh":false},{"lichSuGoi":"2018-09-13","noteTinhTrang":"Khach hang tu choi lam ho so vay","trangThai":1,"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410654"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":false,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":false,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":false,"thongTin":"124"}],"tenKH":"Nguyen Quy Hoi","cmnd":"231546952","ngaySinh":"Sep 6, 1997","gioiTinh":false}]`;
-	listObjchuacv = [];
-	listObjdacv = [];
+	listObjchuacv = {};
+	listObjdacv = {};
 	
 	
 	containerTable = $(".container.table");
 	lastIDSelected = -1;
 	
-	tachObj = listObj => {
-		$.each(listObj, (k,v) => {
-			if (listObj[k].trangThai == "1") listObjchuacv.push(listObj[k]);
-			else listObjdacv.push(listObj[k]);
-		})
+	tachObj = listO => {
+		let newList = {};
+		$.each(listO, (k,v) => {
+			if (listO[k].trangThai == "1") listObjchuacv[v.cmnd] = v;
+			else listObjdacv[v.cmnd] = v;
+			newList[v.cmnd] = v;
+		});
+		listObj = newList;
 	}
 	
 	var tabbar = $('#lisitems');
-//	listObj = JSON.parse(listObj);
-//	tachObj(listObj);
-//	setListItem(listObj, tabbar);
-	$.get("./hosothamdinhcv",
-	{
-	  name: "Donald Duck",
-	  city: "Duckburg"
-	}, function(data, status){
-		var tabbar = $('#lisitems');
-		listObj = JSON.parse(data);
-		tachObj(listObj);
-		setListItem(listObj, tabbar);
-	});
+	listObj = JSON.parse(listObj);
+	tachObj(listObj);
+	setListItem(listObj, tabbar);
+//	$.get("./hosothamdinhcv",
+//	{
+//	  name: "Donald Duck",
+//	  city: "Duckburg"
+//	}, function(data, status){
+//		var tabbar = $('#lisitems');
+//		listObj = JSON.parse(data);
+//		tachObj(listObj);
+//		setListItem(listObj, tabbar);
+//	});
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {

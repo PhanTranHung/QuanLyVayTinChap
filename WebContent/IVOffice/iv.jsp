@@ -51,8 +51,8 @@
 				<div id="main" class="main">
 					<div class="container">
 						<div id='top' class="top">
-							<button class="btn btn-info">Chuyển tới RO</button>
-							<button class="btn btn-warning">Đánh rớt</button>
+							<button name="submit" form="thamdinhhoso" value="success" class="btn btn-info">Chuyển tới RO</button>
+							<button name="submit" form="thamdinhhoso" value="reject"class="btn btn-warning">Đánh rớt</button>
 						</div>
 						<div id="row" class="row">
 							<div class="col-sm-9 center">
@@ -76,7 +76,7 @@
 								<div class="textarea">
 									<label for="textareastatus">Tình trạng</label>
 									<textarea form="thamdinhhoso" name="status" dirname="status.dir" rows="8" id="textareastatus" placeholder="Ghi rõ lí do nếu đánh rớt"></textarea>
-								<div>
+								</div>
 							</div>
 						</div>
 					</div>

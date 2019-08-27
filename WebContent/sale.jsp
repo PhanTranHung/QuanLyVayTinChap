@@ -43,71 +43,69 @@
 						<div id='top' class="top">
 							<button class="btn btn-info">Logout</button>
 						</div>
-						
-						
 						<form action="HomeSaleServlet" method="post">
-						<div id="row" class="row">
-							<div class="col-sm-3 center">
-								<div class="col-input stickytop">
-									<div class="inputitem">
-										<label for="inputitem1">Tên khách hàng</label>										
-										<div class="searchitem">
-											<div class="style-scope-inner">
-												<input class="search" id='inputitem1' type="text" name="ten" placeholder="Tên khách hàng">
-												<span id="searchreset" class="btnreset">x</span>
+							<div id="row" class="row">
+								<div class="col-sm-4 center">
+									<div class="col-input stickytop">
+										<div class="inputitem">
+											<label for="inputitem1">Tên khách hàng</label>										
+											<div class="searchitem">
+												<div class="style-scope-inner">
+													<input class="search" id='inputitem1' type="text" name="ten" placeholder="Tên khách hàng">
+													<span id="searchreset" class="btnreset">x</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="inputitem">
-										<label for="inputitem2">Ngày sinh</label>										
-										<div class="searchitem">
-											<div class="style-scope-inner">
-												<input class="search" id='inputitem2' type="text" name="ngaysinh" placeholder="Ngày sinh">
-												<span id="searchreset" class="btnreset">x</span>
+										<div class="inputitem">
+											<label for="inputitem2">Ngày sinh</label>										
+											<div class="searchitem">
+												<div class="style-scope-inner">
+													<input class="search" id='inputitem2' type="text" name="ngaysinh" placeholder="Ngày sinh">
+													<span id="searchreset" class="btnreset">x</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="inputitem">
-										<label for="inputitem3">Số CMND</label>										
-										<div class="searchitem">
-											<div class="style-scope-inner">
-												<input class="search" id='inputitem3' type="text" name="socmnd" placeholder="Số CMND">
-												<span id="searchreset" class="btnreset">x</span>
+										<div class="inputitem">
+											<label for="inputitem3">Số CMND</label>										
+											<div class="searchitem">
+												<div class="style-scope-inner">
+													<input class="search" id='inputitem3' type="text" name="socmnd" placeholder="Số CMND">
+													<span id="searchreset" class="btnreset">x</span>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="" style="text-align: center;">
-										<button id="btntimkiem" type="button" class="btn btn-info">
-									     	<span class="glyphicon glyphicon-search"></span> Search
-									    </button>
-										<input id="typeofsubmit" type="hidden" name="typeofsubmit" value="formkh">
+										<div class="" style="text-align: center;">
+											<button id="btntimkiem" type="button" class="btn btn-info">
+										     	<span class="glyphicon glyphicon-search"></span> Search
+										    </button>
+											<input id="typeofsubmit" type="hidden" name="typeofsubmit" value="formkh">
+										</div>
 									</div>
 								</div>
-							</div>
-							</form>
-							<div class="col-sm-6 center">
-								<div class="container table">
-									<div class="row th stickytop">
-										<div class="col-sm-5">
-											Tiêu chí
-										</div>
-										<div class="col-sm-7">
-											Thông tin
-										</div>
-									</div>
-									<div id="tablecontent">
-										<div class="row tr">
+								<div class="col-sm-8 center">
+									<div class="container table">
+										<div class="row th stickytop">
 											<div class="col-sm-5">
-												Tên khách hàng
+												Tiêu chí
 											</div>
 											<div class="col-sm-7">
-												Zoãn Chí Bình
+												Thông tin
+											</div>
+										</div>
+										<div id="tablecontent">
+											<div class="row tr">
+												<div class="col-sm-5">
+													Tên khách hàng
+												</div>
+												<div class="col-sm-7">
+													Zoãn Chí Bình
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
