@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	listObj = `[{"lichSuGoi":"2018-04-20","noteTinhTrang":"khach hang khong song tai dia chi cung cap","trangThai":2,"list":[],"tenKH":"Le Thi Thanh Ha","cmnd":"125478546","ngaySinh":"Aug 15, 1976","gioiTinh":false},{"lichSuGoi":"2018-09-13","noteTinhTrang":"Khach hang tu choi lam ho so vay","trangThai":1,"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410654"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":false,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":false,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":false,"thongTin":"124"}],"tenKH":"Nguyen Quy Hoi","cmnd":"231546952","ngaySinh":"Sep 6, 1997","gioiTinh":false}]`;
-	listObjchuacv = [];
-	listObjdacv = [];
+	listObjchuafv = [];
+	listObjdafv = [];
 	
 	
 	containerTable = $(".container.table");
@@ -9,25 +9,25 @@ $(document).ready(function(){
 	
 	tachObj = listObj => {
 		$.each(listObj, (k,v) => {
-			if (listObj[k].trangThai == 1) listObjchuacv.push(listObj[k]);
-			else listObjchuacv.push(listObj[k]);
+			if (listObj[k].trangThai == 2) listObjchuafv.push(listObj[k]);
+			else listObjdafv.push(listObj[k]);
 		})
 	}
 	
 	var tabbar = $('#lisitems');
-	listObj = JSON.parse(listObj);
-	tachObj(listObj);
-	setListItem(listObj, tabbar);
-//	$.post("./hosothamdinhcv",
-//	{
-//	  name: "Donald Duck",
-//	  city: "Duckburg"
-//	}, function(data, status){
-//		var tabbar = $('#lisitems');
-//		listObj = JSON.parse(data);
-//		tachObj(listObj);
-//		setListItem(listObj, tabbar);
-//	});
+//	listObj = JSON.parse(listObj);
+//	tachObj(listObj);
+//	setListItem(listObj, tabbar);
+	$.get("./hosothamdinhfv",
+	{
+	  name: "Donald Duck",
+	  city: "Duckburg"
+	}, function(data, status){
+		var tabbar = $('#lisitems');
+		listObj = JSON.parse(data);
+		tachObj(listObj);
+		setListItem(listObj, tabbar);
+	});
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {
@@ -35,7 +35,7 @@ $(document).ready(function(){
 				var item = $('<div></div>').attr('class', 'iteminleftmenu');
 				var a = $('<a></a>').attr({
 					'href': '#' + k, 
-					'id'	: v.cmnd }).text(v.tenKH);
+					'id': v.cmnd }).text(v.idHoSo + ": " + v.tenKH);
 					item.append(a);
 					container.append(item);
 			}
@@ -56,8 +56,8 @@ $(document).ready(function(){
 		let listSelected = null;
 		switch ($(this).attr("href").toString()){
 			case "#all": listSelected = listObj; break;
-			case "#chua":listSelected = listObjchuacv; break;
-			case "#xong":listSelected = listObjdacv; break;
+			case "#chua":listSelected = listObjchuafv; break;
+			case "#xong":listSelected = listObjdafv; break;
 			default: console.log("ko dc");
 		}
 		setListItem(listSelected, tabbar);

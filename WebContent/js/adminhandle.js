@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	
+	listObj = ``;
+	
+	
 	var selecteditem = $("a.itemselected");
 	displayselected(selecteditem);
 	console.log(selecteditem);

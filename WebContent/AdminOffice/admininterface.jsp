@@ -356,13 +356,13 @@
 													<div class="inputitem">
 														<label for="">Số tiền vay<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="sotienvay" placeholder="Số tiền vay"></input>
+															<input id="" type="number" name="sotienvay" placeholder="Số tiền vay"></input>
 														</div>
 													</div>
 													<div class="inputitem">
 														<label for="">Thời hạn vay<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="thoihanvay" placeholder="Thời hạn vay"></input>
+															<input id="" type="number" name="thoihanvay" placeholder="Thời hạn vay"></input>
 														</div>
 													</div>
 													<div class="inputitem">
@@ -380,7 +380,7 @@
 													<div class="inputitem">
 														<label for="">Lương<span class="important">*</span></label>
 														<div class="inputiteminner">
-															<input id="" name="luong" placeholder="Lương"></input>
+															<input id="" type="number" name="luong" placeholder="Lương"></input>
 														</div>
 													</div>
 												</div>
