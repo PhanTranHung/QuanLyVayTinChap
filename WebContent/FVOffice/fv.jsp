@@ -35,15 +35,11 @@
 					<div class="leftmenuinner">
 						<div class="leftmenuinnerinner">
 							<div class="tabbar">
-								<a id="listall" href="#all">Tất cả</a>
+								<a id="listall" href="#all" class="tabselected">Tất cả</a>
 								<a id="listchua" href="#chua">Chưa FV</a>
-								<a id="listxong" href="#xong" class="tabselected">Đã FV</a>
+								<a id="listxong" href="#xong">Đã FV</a>
 							</div>
 							<div id='lisitems'>
-								
-								<div class="iteminleftmenu">
-									<a href="#012345">012345: Tình công Tử</a>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -56,50 +52,37 @@
 						</div>
 						<div id="row" class="row">
 							<div class="col-sm-9 center">
-								<div class="container table">
-									<div class="row th">
-										<div class="col-sm-4">
-											Tiêu chí
-										</div>
-										<div class="col-sm-6">
-											Thông tin
-										</div>
-										<div class="col-sm-1">
-											Đúng
-										</div>
-										<div class="col-sm-1">
-											Sai
-										</div>
-									</div>
-									<div class="row tr">
-										<div class="col-sm-4">
-											Tên khách hàng
-										</div>
-										<div class="col-sm-6">
-											Zoãn Chí Bình
-										</div>
-										<div class="col-sm-1">
-											<input type="radio" name="name" value="1">
-										</div>
-										<div class="col-sm-1">
-											<input type="radio" name="name" value="0">
+								<form id="thamdinhhoso" action="./hosothamdinhfv" method="POST">
+									<div class="container table">
+										<div class="row th">
+											<div class="col-sm-4">
+												Tiêu chí
+											</div>
+											<div class="col-sm-6">
+												Thông tin
+											</div>
+											<div class="col-sm-1">
+												Đúng
+											</div>
+											<div class="col-sm-1">
+												Sai
+											</div>
 										</div>
 									</div>
-									
-								</div>
+								</form>
 							</div>
 							<div class="col-sm-3 left">
 								<div class="textarea">
 									<label for="textareahistory">Lịch sử khảo sát</label>
-									<textarea id="textareahistory" placeholder="dd/mm/YYYY: Lịch sử gặp khách hàng"></textarea>
+									<textarea form="thamdinhhoso" name="callhistory" dirname="callhistory.dir" rows="8" id="textareahistory" placeholder="dd/mm/YYYY: Ghi chú khảo sát"></textarea>
 								</div>
 								<div class="textarea">
 									<label for="textareastatus">Tình trạng</label>
-									<textarea id="textareastatus" placeholder="Ghi rõ lí do nếu đánh rớt"></textarea>
-								</div>
+									<textarea form="thamdinhhoso" name="status" dirname="status.dir" rows="8" id="textareastatus" placeholder="Ghi rõ lí do nếu đánh rớt"></textarea>
+									</div>
 								<div>
-									<button type="submit">Lưu</button>
-									<button type="reset">Hủy</button>
+									<button form="thamdinhhoso" type="submit">Lưu</button>
+									<button form="thamdinhhoso" type="reset">Hủy</button>
 								</div>
 							</div>
 						</div>

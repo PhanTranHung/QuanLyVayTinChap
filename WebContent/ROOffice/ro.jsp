@@ -54,64 +54,58 @@
 							<div class="col-sm-6 center">
 								<div class="container table">
 									<div class="row th stickytop">
-										<div class="col-sm-5">
+										<div class="col-sm-6">
 											Tiêu chí
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-6">
 											Thông tin
-										</div>
-									</div>
-									<div class="row tr">
-										<div class="col-sm-5">
-											Tên khách hàng
-										</div>
-										<div class="col-sm-7">
-											Zoãn Chí Bình
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-3 center">
 								<div class="col-input stickytop">
-									<div class="inputitem">
-										<label for="tienvaythucte">Số tiền vay thực tế</label>
-										<div class="inputiteminner">
-											<input id="tienvaythucte" placeholder="Đơn vị: triệu đồng"></input>
+									<form id="thamdinhhoso" action="./hosothamdinhro" method="POST">
+										<div class="inputitem">
+											<label for="tienvaythucte">Số tiền vay thực tế</label>
+											<div class="inputiteminner">
+												<input id="tienvaythucte" placeholder="Đơn vị: triệu đồng"></input>
+											</div>
 										</div>
-									</div>
-									<div class="inputitem">
-										<label for="thoihanvay">Thời hạn vay</label>
-										<div class="inputiteminner">
-											<input id="thoihanvay" placeholder="Đơn vị: tháng"></input>
+										<div class="inputitem">
+											<label for="thoihanvay">Thời hạn vay</label>
+											<div class="inputiteminner">
+												<input id="thoihanvay" placeholder="Đơn vị: tháng"></input>
+											</div>
 										</div>
-									</div>
-									<div class="inputitem">
-										<label for="laisuat">Lãi suất</label>
-										<div class="inputiteminner">
-											<input id="laisuat" placeholder="Đơn vị phần trăm"></input>
+										<div class="inputitem">
+											<label for="laisuat">Lãi suất</label>
+											<div class="inputiteminner">
+												<input id="laisuat" placeholder="Đơn vị phần trăm"></input>
+											</div>
 										</div>
-									</div>
-									<div class="inputitem">
-										<label for="thoigianky">Thời gian ký hợp đồng</label>
-										<div class="inputiteminner">
-											<input id="thoigianky" placeholder="dd-mm-YYYY"></input>
+										<div class="inputitem">
+											<label for="thoigianky">Thời gian ký hợp đồng</label>
+											<div class="inputiteminner">
+												<input id="thoigianky" placeholder="dd-mm-YYYY"></input>
+											</div>
 										</div>
-									</div>
+									</form>
 								</div>
 							</div>
 							<div class="col-sm-3 center">
 								<div class="stickytop">
 									<div class="textarea">
-										<label for="textareahistory">Lịch sử gọi</label>
-										<textarea id="textareahistory" placeholder="dd/mm/YYYY: Ghi chú cuộc gọi"></textarea>
+										<label for="textareahistory">Lịch sử hẹn</label>
+										<textarea form="thamdinhhoso" name="callhistory" dirname="callhistory.dir" rows="8" id="textareahistory" placeholder="dd/mm/YYYY: Ghi chú"></textarea>
 									</div>
 									<div class="textarea">
 										<label for="textareastatus">Tình trạng</label>
-										<textarea id="textareastatus" placeholder="Ghi rõ lí do nếu đánh rớt"></textarea>
-									</div>
+										<textarea form="thamdinhhoso" name="status" dirname="status.dir" rows="8" id="textareastatus" placeholder="Ghi rõ lí do nếu đánh rớt"></textarea>
+										</div>
 									<div>
-										<button type="submit">Lưu</button>
-										<button type="reset">Hủy</button>
+										<button form="thamdinhhoso" type="submit">Lưu</button>
+										<button form="thamdinhhoso" type="reset">Hủy</button>
 									</div>
 								</div>
 							</div>

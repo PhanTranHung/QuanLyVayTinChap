@@ -9,9 +9,9 @@
   </init-param>
 </filter>
   
-  <display-name>QuanLyVayTinChap1</display-name>
+  <display-name>QuanLyVayTinChap</display-name>
   <welcome-file-list>
-    <welcome-file>frame.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
