@@ -9,16 +9,16 @@ $(document).ready(function(){
 	
 	tachObj = listObj => {
 		$.each(listObj, (k,v) => {
-			if (listObj[k].trangThai == 1) listObjchuacv.push(listObj[k]);
-			else listObjchuacv.push(listObj[k]);
+			if (listObj[k].trangThai == "1") listObjchuacv.push(listObj[k]);
+			else listObjdacv.push(listObj[k]);
 		})
 	}
 	
-//	var tabbar = $('#lisitems');
+	var tabbar = $('#lisitems');
 //	listObj = JSON.parse(listObj);
 //	tachObj(listObj);
 //	setListItem(listObj, tabbar);
-	$.post("./hosothamdinhcv",
+	$.get("./hosothamdinhcv",
 	{
 	  name: "Donald Duck",
 	  city: "Duckburg"

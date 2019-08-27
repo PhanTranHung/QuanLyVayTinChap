@@ -23,7 +23,7 @@ public class CVDAO {
 		
 		String sql=	String.format("select TenTieuChi,Alias,Quyen,ThongTin,KQThamDinh from  TieuChi "
 				+ "inner join ThamDinh on TieuChi.IDTieuChi = ThamDinh.IDTieuChi "
-				+ "where IDHoSo = %s and (Quyen = 0 or Quyen = 2)", idHoSo);
+				+ "where IDHoSo = '%s' and (Quyen = 0 or Quyen = 2)", idHoSo);
 		ResultSet rs = excuter.executeQuery(sql);
 		try {
 			while(rs.next()){
@@ -57,6 +57,7 @@ public class CVDAO {
 		try {
 			while(rs.next()){
 				HoSoCV hoSoCv = new HoSoCV();
+				hoSoCv.setIdHoSo(rs.getString("IDHoSo"));
 				hoSoCv.setTenKH(rs.getString("Ten"));
 				hoSoCv.setCmnd(rs.getString("CMNDKhachHang"));
 				Date date = rs.getDate("NgaySinh");
@@ -69,7 +70,7 @@ public class CVDAO {
 				hoSoCv.setLichSuGoi(rs.getString("LichSuCV"));
 				hoSoCv.setNoteTinhTrang(rs.getString("GhiChu"));
 				hoSoCv.setTrangThai(rs.getInt("TrangThai"));
-				List<TieuChi> tieuChi = new CVDAO().listTieuChi(rs.getString("IDHoSo"));
+				List<TieuChi> tieuChi = new CVDAO().listTieuChi(hoSoCv.getIdHoSo());
 				hoSoCv.setList(tieuChi);
 				list.add(hoSoCv);
 			}

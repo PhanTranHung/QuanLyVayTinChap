@@ -1,5 +1,6 @@
 package model.dao;
 
+import model.bean.CongTy;
 import model.bean.HoSoAdmin;
 
 public class AdminDAO {
@@ -39,6 +40,15 @@ public class AdminDAO {
 		System.out.println(sql);
 	 excuter.executeUpdate(sql);
 		
+	}
+	public void themCongTy(CongTy congTy) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql=	String.format("insert into CongTy(TenCongTy,MsThue,DiaChi,TrangThai,Note) \r\n" + 
+				"values('%s','%s','%s','%s','%s')",
+				congTy.getTenCty(),congTy.getmSoThue(),congTy.getDiaChi(),congTy.getLoaiCongTy(),congTy.getTinhTrang());
+		
+		System.out.println(sql);
+	 excuter.executeUpdate(sql);
 	}
 	
 }
