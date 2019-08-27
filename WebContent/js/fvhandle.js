@@ -7,11 +7,14 @@ $(document).ready(function(){
 	containerTable = $(".container.table");
 	lastIDSelected = -1;
 	
-	tachObj = listObj => {
-		$.each(listObj, (k,v) => {
-			if (listObj[k].trangThai == 2) listObjchuafv.push(listObj[k]);
-			else listObjdafv.push(listObj[k]);
-		})
+	tachObj = listO => {
+		let newList = {};
+		$.each(listO, (k,v) => {
+			if (listO[k].trangThai == "2") listObjchuafv[v.cmnd] = v;
+			else listObjdafv[v.cmnd] = v;
+			newList[v.cmnd] = v;
+		});
+		listObj = newList;
 	}
 	
 	var tabbar = $('#lisitems');
