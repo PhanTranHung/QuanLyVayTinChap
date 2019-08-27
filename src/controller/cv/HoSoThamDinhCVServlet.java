@@ -39,6 +39,7 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 
 		String idHoSo = req.getParameter("idHoSo"); 
 		String SDT = req.getParameter("SDT"); 
+		int sdt = Integer.parseInt(SDT);
 		String DC = req.getParameter("DC"); 
 		String DCSHK = req.getParameter("DCSHK"); 
 		String SDTTT = req.getParameter("SDTTT"); 
@@ -50,7 +51,10 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 		String BHYT = req.getParameter("BHYT"); 
 		String NVLV = req.getParameter("NVLV"); 
 		String callhistory = req.getParameter("callhistory"); 
-		String status = req.getParameter("status"); 
+		String status = req.getParameter("status");
+		
+		
+		
 	}
 	/**
 	 * doGet: Trả về danh sách hồ sơ đang CV và đã cv dưới dạng JSON
