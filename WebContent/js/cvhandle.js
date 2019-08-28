@@ -10,27 +10,28 @@ $(document).ready(function(){
 	tachObj = listO => {
 		let newList = {};
 		$.each(listO, (k,v) => {
-			if (listO[k].trangThai == "1") listObjchuacv[v.cmnd] = v;
-			else listObjdacv[v.cmnd] = v;
-			newList[v.cmnd] = v;
+			let cmnd = v.cmnd.trim();
+			if (listO[k].trangThai == "1") listObjchuacv[cmnd] = v;
+			else listObjdacv[cmnd] = v;
+			newList[cmnd] = v;
 		});
 		listObj = newList;
 	}
 	
 	var tabbar = $('#lisitems');
-	listObj = JSON.parse(listObj);
-	tachObj(listObj);
-	setListItem(listObj, tabbar);
-//	$.get("./hosothamdinhcv",
-//	{
-//	  name: "Donald Duck",
-//	  city: "Duckburg"
-//	}, function(data, status){
-//		var tabbar = $('#lisitems');
-//		listObj = JSON.parse(data);
-//		tachObj(listObj);
-//		setListItem(listObj, tabbar);
-//	});
+//	listObj = JSON.parse(listObj);
+//	tachObj(listObj);
+//	setListItem(listObj, tabbar);
+	$.get("./hosothamdinhcv",
+	{
+	  name: "Donald Duck",
+	  city: "Duckburg"
+	}, function(data, status){
+		var tabbar = $('#lisitems');
+		listObj = JSON.parse(data);
+		tachObj(listObj);
+		setListItem(listObj, tabbar);
+	});
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {
@@ -67,7 +68,6 @@ $(document).ready(function(){
 		
 		$("#lisitems .iteminleftmenu a").click(function() {
 			let id = $(this).attr("href").replace("#", "");
-			id = parseInt(id);
 			if (lastIDSelected != id){
 				lastIDSelected = id;
 				containerTable.children().remove(".row.tr")
@@ -78,7 +78,6 @@ $(document).ready(function(){
 	
 	$("#lisitems .iteminleftmenu a").click(function() {
 		let id = $(this).attr("href").replace("#", "");
-		id = parseInt(id);
 		if (lastIDSelected != id){
 			lastIDSelected = id;
 			containerTable.children().remove(".row.tr")

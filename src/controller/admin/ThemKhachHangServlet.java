@@ -35,33 +35,31 @@ public class ThemKhachHangServlet extends HttpServlet{
 		String thoiHanVay = req.getParameter("thoihanvay");
 		String mstcty = req.getParameter("mstcty");
 		String ngay = req.getParameter("ngaylamviec");
-		System.out.println(name);
-		System.out.println(address);
-		resp.getWriter().append(name);
 		
-//		final DateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
-//	      String dateString1 = ngay;
-//	      Date date1 = null;
-//		try {
-//			date1 = df1.parse(dateString1);
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
-//	      final DateFormat df2 = new SimpleDateFormat("yyyy/MM/dd");
-//	      String dateString2 = df2.format(date1);
-//		String luong = req.getParameter("luong");
-//		resp.getWriter().append(dateString2);
-//		
-//		
-//		Random r = new Random();
-//		String idHoSo = ""+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)
-//		+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10);
-//		
-//		HoSoAdmin hoSoAdmin = new HoSoAdmin(name,cmnd,idHoSo,address,sdtXacNhan,sohdld,typeNhanLuong,
-//				sdt,soshk,sobhyt,soTienVay,thoiHanVay,mstcty,dateString2,luong);
-//		
-//		AdminBO adminBo = new AdminBO();
-//		adminBo.themKhachHang(hoSoAdmin);
+		
+		final DateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
+	      String dateString1 = ngay;
+	      Date date1 = null;
+		try {
+			date1 = df1.parse(dateString1);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	      final DateFormat df2 = new SimpleDateFormat("yyyy/MM/dd");
+	      String dateString2 = df2.format(date1);
+		String luong = req.getParameter("luong");
+		resp.getWriter().append(dateString2);
+		
+		
+		Random r = new Random();
+		String idHoSo = ""+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)
+		+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10)+r.nextInt(10);
+		
+		HoSoAdmin hoSoAdmin = new HoSoAdmin(name,cmnd,idHoSo,address,sdtXacNhan,sohdld,typeNhanLuong,
+				sdt,soshk,sobhyt,soTienVay,thoiHanVay,mstcty,dateString2,luong);
+		
+		AdminBO adminBo = new AdminBO();
+		adminBo.themKhachHang(hoSoAdmin);
 	
 	}
 

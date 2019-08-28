@@ -22,7 +22,7 @@ public  List<TieuChi> listTieuChi(String idHoSo){
 		
 		String sql=	String.format("select TenTieuChi,Alias,Quyen,ThongTin,KQThamDinh from  TieuChi "
 				+ "inner join ThamDinh on TieuChi.IDTieuChi = ThamDinh.IDTieuChi "
-				+ "where IDHoSo = %s and (Quyen = 1 or Quyen = 2)", idHoSo);
+				+ "where IDHoSo = %s and (TieuChi.Quyen = 1 or Quyen = 2)", idHoSo);
 		ResultSet rs = excuter.executeQuery(sql);
 		try {
 			while(rs.next()){
@@ -56,6 +56,7 @@ public  List<TieuChi> listTieuChi(String idHoSo){
 		try {
 			while(rs.next()){
 				HoSoFV hoSoCv = new HoSoFV();
+				hoSoCv.setIdHoSo(rs.getString("IDHoSo"));
 				hoSoCv.setTenKH(rs.getString("Ten"));
 				hoSoCv.setCmnd(rs.getString("CMNDKhachHang"));
 				Date date = rs.getDate("NgaySinh");
@@ -77,6 +78,59 @@ public  List<TieuChi> listTieuChi(String idHoSo){
 		}
 		
 		return list ;
+	}
+public  List<TieuChi> listAllTenTieuChi(){
+		
+		ExcuteDB excuter = new ExcuteDB();
+		
+		List<TieuChi> list = new ArrayList<TieuChi>();
+		
+		String sql=	String.format("select IDTieuChi,Alias from TieuChi where Quyen= 1 or Quyen= 2");
+		ResultSet rs = excuter.executeQuery(sql);
+		try {
+			while(rs.next()){
+				TieuChi tc = new TieuChi();
+				tc.setTenTC(rs.getString("IDTieuChi"));
+				tc.setAlias(rs.getString("Alias"));
+				list.add(tc);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list ;
+		
+	}
+
+
+	
+	public void ThamDinh(String val, String idHoSo,String idTieuChi) {
+		
+		ExcuteDB excuter = new ExcuteDB();
+		
+		String sql=	String.format("update ThamDinh set KQThamDinh = '%s' where IDHoSo = '%s' and IDTieuChi ='%s'",val,idHoSo,idTieuChi);
+		
+		System.out.println(sql);
+	 excuter.executeUpdate(sql);
+		
+	}
+	public void ChuyenTrangThai(String idHoSo) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo set TrangThai = '3' where IDHoSo = '%s'", idHoSo);
+
+		excuter.executeUpdate(sql1);
+	}
+	public void ChuyenFV(String idHoSo) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo set TrangThai = '3' where IDHoSo = '%s'", idHoSo);
+
+		excuter.executeUpdate(sql1);
+	}
+	public void DanhRot(String idHoSo,String status) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo set TrangThai = '6' where IDHoSo = '%s';"
+				+ "update HoSo set GhiChu = '%s' where IDHoSo = '%s'", idHoSo,status,idHoSo);
+		excuter.executeUpdate(sql1);
 	}
 
 }
