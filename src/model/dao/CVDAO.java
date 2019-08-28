@@ -104,18 +104,25 @@ public class CVDAO {
 
 		ExcuteDB excuter = new ExcuteDB();
 
-		String sql = String.format("update ThamDinh set KQThamDinh = '%s' where IDHoSo = '%s' and IDTieuChi ='%s'", val,
-				idHoSo, idTieuChi);
+		String sql = String.format("update ThamDinh set KQThamDinh = '%s' where IDHoSo = '%s' and IDTieuChi ='%s'", val,idHoSo, idTieuChi);
 
 		excuter.executeUpdate(sql);
 		
 
 	}
-	public void ChuyenTrangThai(String idHoSo) {
+	public void ChuyenFV(String idHoSo) {
 		ExcuteDB excuter = new ExcuteDB();
 		String sql1 = String.format("update HoSo set TrangThai = '2' where IDHoSo = '%s'", idHoSo);
 
 		excuter.executeUpdate(sql1);
 	}
+	public void DanhRot(String idHoSo,String status) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo set TrangThai = '6' where IDHoSo = '%s';"
+				+ "update HoSo set GhiChu = '%s' where IDHoSo = '%s'", idHoSo,status,idHoSo);
+		excuter.executeUpdate(sql1);
+	}
+
+	
 
 }

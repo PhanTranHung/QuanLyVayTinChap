@@ -44,23 +44,34 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 		CVBO cvBo = new CVBO();
 		
 		String idHoSo = req.getParameter("idHoSo"); 
-
+		String submit = req.getParameter("submit");
+		
 		List<TieuChi> listAllTenTieuChi = cvBo.listAllTenTieuChi();
 		int listSize = listAllTenTieuChi.size();
+
 		for (int i = 0; i < listSize; i++) {
 			TieuChi tieuchi = listAllTenTieuChi.get(i);
-			
 			String val = req.getParameter(tieuchi.getAlias());
-
 			cvBo.ThamDinh(val, idHoSo, tieuchi.getTenTC());
-			
 		}
-		cvBo.ChuyenTrangThai(idHoSo);
-		RequestDispatcher rd = req.getRequestDispatcher("./CVOffice/cv.jsp");
-		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.CV);
-		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.CV_INTERFACE);
-		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.CV_HANDLE);
-		rd.forward(req, resp);
+		
+		switch(submit) {
+			case "reject" :
+				String status = req.getParameter("status");
+				cvBo.DanhRot(idHoSo, status);
+				break;
+			case "success":
+				cvBo.ChuyenFV(idHoSo);
+				break;
+			case "save":
+				break;
+			default:
+				System.out.println("ko dc");
+				break;
+		}
+
+		resp.sendRedirect("./homecv");
+		
 	}
 	/**
 	 * doGet: Trả về danh sách hồ sơ đang CV và đã cv dưới dạng JSON

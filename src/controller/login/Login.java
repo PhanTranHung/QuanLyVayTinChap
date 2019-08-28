@@ -73,8 +73,14 @@ public class Login extends HttpServlet {
 		String user = request.getParameter("username");
 		String pass = request.getParameter("pass");
 		
+		
+		
 		LoginBO loginBo = new LoginBO();
-		String chucVu = loginBo.kiemTraLogin(user, pass);
+		String login = loginBo.kiemTraLogin(user, pass);
+	//	response.getWriter().append(chucVu);
+		String dangNhap[] = login.split("/");
+		String chucVu = dangNhap[0];
+		String idNhanVien = dangNhap[1];
 		
 		switch (chucVu) {
 		case "sale":

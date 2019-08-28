@@ -24,7 +24,6 @@ public class HoSoThamDinhFVServlet extends HttpServlet {
 		List<HoSoFV> list;
 		list = fvBo.dsHs();
 
-		System.out.println("some things ");
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
 		resp.getWriter().write(json);
@@ -37,6 +36,7 @@ public class HoSoThamDinhFVServlet extends HttpServlet {
 		FVBO fvBo = new FVBO();
 
 		String idHoSo = req.getParameter("idHoSo");
+		String submit = req.getParameter("submit");
 
 		List<TieuChi> listAllTenTieuChi = fvBo.listAllTenTieuChi();
 		
@@ -45,12 +45,31 @@ public class HoSoThamDinhFVServlet extends HttpServlet {
 			TieuChi tieuchi = listAllTenTieuChi.get(i);
 
 			String val = req.getParameter(tieuchi.getAlias());
+			if(val != null ) {
+				fvBo.ThamDinh(val, idHoSo, tieuchi.getTenTC());
+			}
+			else {
+				continue ;
+			}
 			
-			//System.out.println(val);
-
-			fvBo.ThamDinh(val, idHoSo, tieuchi.getTenTC());
 
 		}
+		switch(submit) {
+		case "reject" :
+			String status = req.getParameter("status");
+			fvBo.DanhRot(idHoSo, status);
+			break;
+		case "success":
+			fvBo.ChuyenIV(idHoSo);
+			break;
+		case "save":
+			break;
+		default:
+			System.out.println("ko dc");
+			break;
+	}
+
+	resp.sendRedirect("./homecv");
 
 	}
 	/**

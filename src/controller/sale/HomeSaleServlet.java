@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import common.JSFiles;
 import common.TypeOfUser;
@@ -40,12 +41,38 @@ public class HomeSaleServlet extends HttpServlet {
 		/**
 		 * Trả về giao diện cho người dùng
 		 */
+		HttpSession session = req.getSession();
+		String chucVu =(String) session.getAttribute("chucVu");
+		if (chucVu == null || chucVu=="sale") {
+			RequestDispatcher rd = req.getRequestDispatcher("sale.jsp");
+			req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.SALE_PERSONAL);
+			req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.SALE_HANDLE);
+			req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.SALE_INTERFACE);
+			rd.forward(req, resp);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("sale.jsp");
-		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.SALE_PERSONAL);
-		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.SALE_HANDLE);
-		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.SALE_INTERFACE);
-		rd.forward(req, resp);
+		} else {
+			switch (chucVu) {
+			
+			case "admin": 
+				resp.sendRedirect("homeadmin");
+				break;
+			case "cv": 
+				resp.sendRedirect("homecv");
+				break;
+			case "fv" : 
+				resp.sendRedirect("homefv");
+				break;
+			case "iv" : 
+				resp.sendRedirect("homeiv");
+				break ;
+			case "ro" : 
+				resp.sendRedirect("homero");
+				break ;
+			}
+		}
+		
+		
+		
 		
 		
 	}

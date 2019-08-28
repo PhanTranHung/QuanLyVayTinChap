@@ -10,16 +10,15 @@ public class LoginDAO {
 	public String kiemTraLogin(String user, String pass) {
 		String chucVu ="" ;
 		int maChucVu = 0 ;
-		
+		String maNhanVien ="" ;
 		ExcuteDB excuter = new ExcuteDB();
-		String sql=	String.format("select MaChucVu\r\n" + 
-				"from NhanVien\r\n" + 
-				"where Alias = '%s' and Pass = '%s'",user,pass);
+		String sql=	String.format("select MaNhanVien,MaChucVu from NhanVien where Alias = '%s' and Pass = '%s'",user,pass);
 		ResultSet rs = excuter.executeQuery(sql);
 		
 		try {
 			while(rs.next()){
 				 maChucVu = rs.getInt("MaChucVu");
+				 maNhanVien = rs.getString("MaNhanVien");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -45,7 +44,7 @@ public class LoginDAO {
 			break;
 
 		}
-		return chucVu;
+		return chucVu+"/"+maNhanVien;
 	}
 
 }

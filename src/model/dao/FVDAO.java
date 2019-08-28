@@ -120,5 +120,17 @@ public  List<TieuChi> listAllTenTieuChi(){
 
 		excuter.executeUpdate(sql1);
 	}
+	public void ChuyenFV(String idHoSo) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo set TrangThai = '3' where IDHoSo = '%s'", idHoSo);
+
+		excuter.executeUpdate(sql1);
+	}
+	public void DanhRot(String idHoSo,String status) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo set TrangThai = '6' where IDHoSo = '%s';"
+				+ "update HoSo set GhiChu = '%s' where IDHoSo = '%s'", idHoSo,status,idHoSo);
+		excuter.executeUpdate(sql1);
+	}
 
 }

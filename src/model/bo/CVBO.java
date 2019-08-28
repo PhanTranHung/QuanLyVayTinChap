@@ -5,6 +5,7 @@ import java.util.List;
 import model.bean.HoSoCV;
 import model.bean.TieuChi;
 import model.dao.CVDAO;
+import model.dao.ExcuteDB;
 
 public class CVBO {
 	
@@ -19,7 +20,11 @@ public class CVBO {
 	public void ThamDinh(String val, String idHoSo,String idTieuChi) {
 		 cvDao.ThamDinh(val, idHoSo, idTieuChi);
 	}
-	public void ChuyenTrangThai(String idHoSo) {
-		cvDao.ChuyenTrangThai(idHoSo);
+	public void ChuyenFV(String idHoSo) {
+		cvDao.ChuyenFV(idHoSo);
 	}
+	public void DanhRot(String IDHoSo,String status) {
+		cvDao.DanhRot(IDHoSo, status);
+	}
+	
 }

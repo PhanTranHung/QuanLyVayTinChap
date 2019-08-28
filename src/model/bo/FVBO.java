@@ -17,5 +17,11 @@ public class FVBO {
 	public void ThamDinh(String val, String idHoSo,String idTieuChi) {
 		fvDao.ThamDinh(val, idHoSo, idTieuChi);
 	}
+	public void ChuyenIV(String idHoSo) {
+		fvDao.ChuyenFV(idHoSo);
+	}
+	public void DanhRot(String IDHoSo,String status) {
+		fvDao.DanhRot(IDHoSo, status);
+	}
 	
 }
