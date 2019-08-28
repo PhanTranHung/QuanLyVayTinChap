@@ -40,9 +40,6 @@
 								<a id="listxong" href="#xong">Đã IV</a>
 							</div>
 							<div id='lisitems'>
-								<div class="iteminleftmenu">
-									<a href="#012345">012345: Cô Cô</a>
-								</div>
 								
 							</div>
 						</div>
