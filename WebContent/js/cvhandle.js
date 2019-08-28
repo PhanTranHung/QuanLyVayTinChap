@@ -44,6 +44,7 @@ $(document).ready(function(){
 					container.append(item);
 			}
 		});
+		initializationevent();
 	};
 	
 	emptyTabbar = () => {
@@ -65,7 +66,10 @@ $(document).ready(function(){
 			default: console.log("ko dc");
 		}
 		setListItem(listSelected, tabbar);
-		
+		initializationevent();
+	});
+	
+	function initializationevent(){
 		$("#lisitems .iteminleftmenu a").click(function() {
 			let id = $(this).attr("href").replace("#", "");
 			if (lastIDSelected != id){
@@ -74,16 +78,7 @@ $(document).ready(function(){
 				lietKeThongTin(listObj[id]);
 			}
 		});
-	});
-	
-	$("#lisitems .iteminleftmenu a").click(function() {
-		let id = $(this).attr("href").replace("#", "");
-		if (lastIDSelected != id){
-			lastIDSelected = id;
-			containerTable.children().remove(".row.tr")
-			lietKeThongTin(listObj[id]);
-		}
-	});
+	};
 	
 	lietKeThongTin = (info) => {
 		containerTable.append(themrow("Tên khách hàng", info.tenKH).append($("<input type='hidden' name='idHoSo' value='" + info.idHoSo + "'/>")));

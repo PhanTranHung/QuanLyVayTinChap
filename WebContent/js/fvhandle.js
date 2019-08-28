@@ -19,19 +19,30 @@ $(document).ready(function(){
 	}
 	
 	var tabbar = $('#lisitems');
-	listObj = JSON.parse(listObj);
-	tachObj(listObj);
-	setListItem(listObj, tabbar);
-//	$.get("./hosothamdinhfv",
-//	{
-//	  name: "Donald Duck",
-//	  city: "Duckburg"
-//	}, function(data, status){
-//		var tabbar = $('#lisitems');
-//		listObj = JSON.parse(data);
-//		tachObj(listObj);
-//		setListItem(listObj, tabbar);
-//	});
+//	listObj = JSON.parse(listObj);
+//	tachObj(listObj);
+//	setListItem(listObj, tabbar);
+	$.get("./hosothamdinhfv",
+	{
+	  name: "Donald Duck",
+	  city: "Duckburg"
+	}, function(data, status){
+		var tabbar = $('#lisitems');
+		listObj = JSON.parse(data);
+		tachObj(listObj);
+		setListItem(listObj, tabbar);
+	});
+	
+	function initializationevent(){
+		$("#lisitems .iteminleftmenu a").click(function() {
+			let id = $(this).attr("href").replace("#", "");
+			if (lastIDSelected != id){
+				lastIDSelected = id;
+				containerTable.children().remove(".row.tr")
+				lietKeThongTin(listObj[id]);
+			}
+		});
+	};
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {
@@ -44,6 +55,7 @@ $(document).ready(function(){
 					container.append(item);
 			}
 		});
+		initializationevent();
 	};
 	
 	emptyTabbar = () => {
@@ -65,22 +77,8 @@ $(document).ready(function(){
 			default: console.log("ko dc");
 		}
 		setListItem(listSelected, tabbar);
-		
 		initializationevent();
 	});
-	
-	initializationevent = () => {
-		$("#lisitems .iteminleftmenu a").click(function() {
-			let id = $(this).attr("href").replace("#", "");
-			if (lastIDSelected != id){
-				lastIDSelected = id;
-				containerTable.children().remove(".row.tr")
-				lietKeThongTin(listObj[id]);
-			}
-		});
-	};
-	
-	initializationevent();
 	
 	lietKeThongTin = (info) => {
 		containerTable.append(themrow("Tên khách hàng", info.tenKH).append($("<input type='hidden' name='idHoSo' value='" + info.idHoSo + "'/>")));

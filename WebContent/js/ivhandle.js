@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	listObj = `[{"idHoSo":"1234567891","sdt":"0986410644","diaChi":"To 23. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"idHoSo":"1234567894","sdt":"0986410654","diaChi":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"}]`;
-	listObjchuaiv = [];
-	listObjdaiv = [];
+	listObj = `[{"sdt":"SDTCN001","diaChi":"Dia Chi 001","trangThai":3,"tenKH":"DOAN VAN TINH","cmnd":"SCMND001 ","gioiTinh":false,"idHoSo":"8523584641"},{"sdt":"SDTCN002","diaChi":"DIACHI002","trangThai":3,"tenKH":"Nguyen Chi Cong","cmnd":"SCMND002 ","gioiTinh":false,"idHoSo":"0886087791"},{"sdt":"SDTCN003","diaChi":"DIACHI003","trangThai":3,"tenKH":"DINH VAN TOAN","cmnd":"SCMND003 ","gioiTinh":false,"idHoSo":"1780200993"}]`;
+	listObjchuaiv = {};
+	listObjdaiv = {};
 	
 	
 	containerTable = $(".container.table");
@@ -10,9 +10,10 @@ $(document).ready(function(){
 	tachObj = listO => {
 		let newList = {};
 		$.each(listO, (k,v) => {
-			if (listO[k].trangThai == "3") listObjchuaiv[v.cmnd] = v;
-			else listObjdaiv[v.cmnd] = v;
-			newList[v.cmnd] = v;
+			let cmnd = v.cmnd.trim();
+			if (listO[k].trangThai == "3") listObjchuaiv[cmnd] = v;
+			else listObjdaiv[cmnd] = v;
+			newList[cmnd] = v;
 		});
 		listObj = newList;
 	}
@@ -43,6 +44,8 @@ $(document).ready(function(){
 					container.append(item);
 			}
 		});
+
+		initializationevent();
 	};
 	
 	emptyTabbar = () => {
@@ -64,33 +67,26 @@ $(document).ready(function(){
 			default: console.log("ko dc");
 		}
 		setListItem(listSelected, tabbar);
-		
+	});
+	
+	function initializationevent(){
 		$("#lisitems .iteminleftmenu a").click(function() {
 			let id = $(this).attr("href").replace("#", "");
-			id = parseInt(id);
 			if (lastIDSelected != id){
 				lastIDSelected = id;
 				containerTable.children().remove(".row.tr")
 				lietKeThongTin(listObj[id]);
 			}
 		});
-	});
-	
-	$("#lisitems .iteminleftmenu a").click(function() {
-		let id = $(this).attr("href").replace("#", "");
-		id = parseInt(id);
-		if (lastIDSelected != id){
-			lastIDSelected = id;
-			containerTable.children().remove(".row.tr")
-			lietKeThongTin(listObj[id]);
-		}
-	});
+	};
 	
 	lietKeThongTin = (info) => {
+		containerTable.append(themrow("Số hồ sơ", info.idHoSo));
 		containerTable.append(themrow("Tên khách hàng", info.tenKH).append($("<input type='hidden' name='idHoSo' value='" + info.idHoSo + "'/>")));
 		containerTable.append(themrow("Chứng minh nhân dân", info.cmnd));
 		containerTable.append(themrow("Giới tính", info.gioiTinh ? "Nữ" : "Nam"));
 		containerTable.append(themrow("Ngày sinh", info.ngaySinh));
+		containerTable.append(themrow("Địa chỉ", info.diaChi));
 		
 		$.each(info.list, (k, v) => {
 			containerTable.append(themrow(info.list[k].tenTC, info.list[k].thongTin, info.list[k].quyen, info.list[k].thamDinh, info.list[k].alias));

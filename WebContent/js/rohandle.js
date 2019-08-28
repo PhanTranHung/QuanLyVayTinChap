@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	listObj = `[{"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410644"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":true,"thongTin":"To 23. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":true,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":true,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":true,"thongTin":"156234952 "},{"tenTC":"Dia chi cong ty","alias":"DCCT","quyen":2,"thamDinh":true,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":true,"thongTin":"8000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":true,"thongTin":"Chuyen khoan"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":true,"thongTin":"123"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":true,"thongTin":"456"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":true,"thongTin":"10/10/2010"},{"tenTC":"So du no","alias":"SDN","quyen":1,"thamDinh":true,"thongTin":"0"},{"tenTC":"Lich su tra no","alias":"LSTN","quyen":1,"thamDinh":true,"thongTin":"Chua tung tra tre"},{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410654"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":false,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":false,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":false,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":false,"thongTin":"156234952 "},{"tenTC":"Dia chi cong ty","alias":"DCCT","quyen":2,"thamDinh":false,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":false,"thongTin":"8000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":false,"thongTin":"Chuyen khoan"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":false,"thongTin":"124"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":false,"thongTin":"457"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":false,"thongTin":"10/10/2010"}],"tenKH":"Dang Ngoc Tuan","cmnd":"125451445","ngaySinh":"Jan 2, 1998","gioiTinh":true},{"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410644"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":true,"thongTin":"To 23. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":true,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":true,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":true,"thongTin":"156234952 "},{"tenTC":"Dia chi cong ty","alias":"DCCT","quyen":2,"thamDinh":true,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":true,"thongTin":"8000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":true,"thongTin":"Chuyen khoan"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":true,"thongTin":"123"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":true,"thongTin":"456"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":true,"thongTin":"10/10/2010"},{"tenTC":"So du no","alias":"SDN","quyen":1,"thamDinh":true,"thongTin":"0"},{"tenTC":"Lich su tra no","alias":"LSTN","quyen":1,"thamDinh":true,"thongTin":"Chua tung tra tre"},{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410654"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":false,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":false,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":false,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":false,"thongTin":"156234952 "},{"tenTC":"Dia chi cong ty","alias":"DCCT","quyen":2,"thamDinh":false,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":false,"thongTin":"8000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":false,"thongTin":"Chuyen khoan"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":false,"thongTin":"124"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":false,"thongTin":"457"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":false,"thongTin":"10/10/2010"}],"tenKH":"Nguyen Dinh Dung","cmnd":"125496354","ngaySinh":"Sep 23, 1987","gioiTinh":true},{"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410644"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":true,"thongTin":"To 23. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":true,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":true,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":true,"thongTin":"156234952 "},{"tenTC":"Dia chi cong ty","alias":"DCCT","quyen":2,"thamDinh":true,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":true,"thongTin":"8000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":true,"thongTin":"Chuyen khoan"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":true,"thongTin":"123"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":true,"thongTin":"456"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":true,"thongTin":"10/10/2010"},{"tenTC":"So du no","alias":"SDN","quyen":1,"thamDinh":true,"thongTin":"0"},{"tenTC":"Lich su tra no","alias":"LSTN","quyen":1,"thamDinh":true,"thongTin":"Chua tung tra tre"},{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"0986410654"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":false,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":false,"thongTin":"To 14. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":false,"thongTin":"0986410645;0986410646;0986410647"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":false,"thongTin":"156234952 "},{"tenTC":"Dia chi cong ty","alias":"DCCT","quyen":2,"thamDinh":false,"thongTin":"To 13. phuong Hoa Xuan, quan Cam Le, Da Nang"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":false,"thongTin":"8000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":false,"thongTin":"Chuyen khoan"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":false,"thongTin":"124"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":false,"thongTin":"457"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":false,"thongTin":"10/10/2010"}],"tenKH":"Nguyen Thi Hoai Thuong","cmnd":"245632584","ngaySinh":"Feb 19, 1992","gioiTinh":false}]`;
-	listObjchuaiv = [];
-	listObjdaiv = [];
+	listObj = `[{"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":true,"thongTin":"SDTCN002"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":true,"thongTin":"DIACHI002"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":true,"thongTin":"SSHK002"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":true,"thongTin":"SDTXN002"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":true,"thongTin":"MSTCY002"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":true,"thongTin":"20000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":true,"thongTin":"HTNL002"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":true,"thongTin":"SHDLD002"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":true,"thongTin":"SBHYT002"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":true,"thongTin":"1995/03/11"},{"tenTC":"So tien vay","alias":"STV","quyen":0,"thamDinh":true,"thongTin":"200000000"},{"tenTC":"Thoi Han Vay","alias":"THV","quyen":1,"thamDinh":false,"thongTin":"11"}],"tenKH":"Nguyen Chi Cong","cmnd":"SCMND002 ","gioiTinh":false,"tinhTrang":"4","idHoSo":"0886087791"},{"list":[{"tenTC":"So dien thoai","alias":"SDT","quyen":0,"thamDinh":false,"thongTin":"SDTCN003"},{"tenTC":"Dia chi ","alias":"DC","quyen":2,"thamDinh":true,"thongTin":"DIACHI003"},{"tenTC":"Dia chi dang ki tren so ho khau","alias":"DCSHK","quyen":0,"thamDinh":false,"thongTin":"SSHK003"},{"tenTC":"So dien thoai tham chieu","alias":"SDTTT","quyen":0,"thamDinh":true,"thongTin":"SDTXN003"},{"tenTC":"Ma so thue cong ty","alias":"MST","quyen":2,"thamDinh":true,"thongTin":"MST003"},{"tenTC":"Luong","alias":"L","quyen":2,"thamDinh":true,"thongTin":"200000000"},{"tenTC":"Hinh thuc nhan luong","alias":"HTNL","quyen":2,"thamDinh":true,"thongTin":"HTNL003"},{"tenTC":"Hop dong lao dong","alias":"HDLD","quyen":0,"thamDinh":true,"thongTin":"SHDLD003"},{"tenTC":"Bao hiem y te","alias":"BHYT","quyen":2,"thamDinh":true,"thongTin":"SBHYT003"},{"tenTC":"Ngay vao lam viec","alias":"NVLV","quyen":2,"thamDinh":true,"thongTin":"20112/04/11"},{"tenTC":"So tien vay","alias":"STV","quyen":0,"thamDinh":true,"thongTin":"200000000"},{"tenTC":"Thoi Han Vay","alias":"THV","quyen":1,"thamDinh":false,"thongTin":"22"}],"tenKH":"DINH VAN TOAN","cmnd":"SCMND003 ","gioiTinh":false,"tinhTrang":"4","idHoSo":"1780200993"}]`;
+	listObjchuaro = {};
+	listObjdaro = {};
 	
 	
 	containerTable = $(".container.table");
@@ -10,7 +10,8 @@ $(document).ready(function(){
 	tachObj = listO => {
 		let newList = {};
 		$.each(listO, (k,v) => {
-			if (listO[k].trangThai == "1") listObjchuaro[v.cmnd] = v;
+			let cmnd = v.cmnd.trim();
+			if (listO[k].trangThai == "4") listObjchuaro[v.cmnd] = v;
 			else listObjdaro[v.cmnd] = v;
 			newList[v.cmnd] = v;
 		});
@@ -21,7 +22,7 @@ $(document).ready(function(){
 	listObj = JSON.parse(listObj);
 	tachObj(listObj);
 	setListItem(listObj, tabbar);
-//	$.get("./hosothamdinhiv",
+//	$.get("./hosothamdinhro",
 //	{
 //	  name: "Donald Duck",
 //	  city: "Duckburg"
@@ -31,6 +32,18 @@ $(document).ready(function(){
 //		tachObj(listObj);
 //		setListItem(listObj, tabbar);
 //	});
+	
+	function initializationevent(){
+		$("#lisitems .iteminleftmenu a").click(function() {
+			let id = $(this).attr("href").replace("#", "");
+			if (lastIDSelected != id){
+				lastIDSelected = id;
+				containerTable.children().remove(".row.tr")
+				lietKeThongTin(listObj[id]);
+			}
+		});
+	};
+	
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {
@@ -43,6 +56,7 @@ $(document).ready(function(){
 					container.append(item);
 			}
 		});
+		initializationevent();
 	};
 	
 	emptyTabbar = () => {
@@ -59,31 +73,12 @@ $(document).ready(function(){
 		let listSelected = null;
 		switch ($(this).attr("href").toString()){
 			case "#all": listSelected = listObj; break;
-			case "#chua":listSelected = listObjchuaiv; break;
-			case "#xong":listSelected = listObjdaiv; break;
+			case "#chua":listSelected = listObjchuaro; break;
+			case "#xong":listSelected = listObjdaro; break;
 			default: console.log("ko dc");
 		}
 		setListItem(listSelected, tabbar);
-		
-		$("#lisitems .iteminleftmenu a").click(function() {
-			let id = $(this).attr("href").replace("#", "");
-			id = parseInt(id);
-			if (lastIDSelected != id){
-				lastIDSelected = id;
-				containerTable.children().remove(".row.tr")
-				lietKeThongTin(listObj[id]);
-			}
-		});
-	});
-	
-	$("#lisitems .iteminleftmenu a").click(function() {
-		let id = $(this).attr("href").replace("#", "");
-		id = parseInt(id);
-		if (lastIDSelected != id){
-			lastIDSelected = id;
-			containerTable.children().remove(".row.tr")
-			lietKeThongTin(listObj[id]);
-		}
+		initializationevent();
 	});
 	
 	lietKeThongTin = (info) => {
