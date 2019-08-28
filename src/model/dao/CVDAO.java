@@ -122,6 +122,14 @@ public class CVDAO {
 				+ "update HoSo set GhiChu = '%s' where IDHoSo = '%s'", idHoSo,status,idHoSo);
 		excuter.executeUpdate(sql1);
 	}
+	public void nhanVienCv(String maNv, String idHoSo) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo \r\n" + 
+				"  set MaNVCV = '%s'\r\n" + 
+				"  where IDHoSo = '%s' ", maNv,idHoSo);
+		System.out.println(sql1);
+		excuter.executeUpdate(sql1);
+	}
 
 	
 

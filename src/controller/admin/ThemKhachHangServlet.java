@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.bean.HoSoAdmin;
 import model.bo.AdminBO;
@@ -21,8 +22,11 @@ public class ThemKhachHangServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
+		HttpSession session = req.getSession();
+		String maNv =(String) session.getAttribute("idNhanVien");
 		
 		String name = convertToUTF8(req.getParameter("name"));
+		String gender = req.getParameter("gender");
 		String address = req.getParameter("address");
 		String sdtXacNhan = req.getParameter("sdtxacnhan");
 		String sohdld = req.getParameter("sohdld");
@@ -36,8 +40,7 @@ public class ThemKhachHangServlet extends HttpServlet{
 		String mstcty = req.getParameter("mstcty");
 		String ngay = req.getParameter("ngaylamviec");
 		
-		
-		final DateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
+		 DateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
 	      String dateString1 = ngay;
 	      Date date1 = null;
 		try {
@@ -45,10 +48,10 @@ public class ThemKhachHangServlet extends HttpServlet{
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-	      final DateFormat df2 = new SimpleDateFormat("yyyy/MM/dd");
+	       DateFormat df2 = new SimpleDateFormat("yyyy/MM/dd");
 	      String dateString2 = df2.format(date1);
 		String luong = req.getParameter("luong");
-		resp.getWriter().append(dateString2);
+		//resp.getWriter().append(dateString2);
 		
 		
 		Random r = new Random();
@@ -60,6 +63,8 @@ public class ThemKhachHangServlet extends HttpServlet{
 		
 		AdminBO adminBo = new AdminBO();
 		adminBo.themKhachHang(hoSoAdmin);
+		
+		adminBo.nhanVienAdmin(maNv, idHoSo);
 	
 	}
 

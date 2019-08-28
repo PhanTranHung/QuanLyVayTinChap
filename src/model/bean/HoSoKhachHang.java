@@ -1,5 +1,8 @@
 package model.bean;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -10,6 +13,25 @@ public class HoSoKhachHang {
 	Date ngaySinh;
 	boolean gioiTinh;
 	String tinhTrang;
+	String ngaysinhStr;
+	String ghiChu ;
+	
+	public String getGhiChu() {
+		return ghiChu;
+	}
+
+	public void setGhiChu(String ghiChu) {
+		this.ghiChu = ghiChu;
+	}
+
+	public String getNgaysinhStr() {
+		return ngaysinhStr;
+	}
+
+	public void setNgaysinhStr(String ngaysinhStr) {
+		this.ngaysinhStr = ngaysinhStr;
+	}
+
 	String idHoSo ;
 	
 
@@ -37,10 +59,10 @@ public class HoSoKhachHang {
 		this.cmnd = cmnd;
 	}
 	public Date getNgaySinh() {
-		return ngaySinh;
+		return this.ngaySinh;
 	}
 	public void setNgaySinh(Date ngaySinh) {
-		this.ngaySinh = ngaySinh;
+		 this.ngaySinh = ngaySinh;
 	}
 	public boolean isGioiTinh() {
 		return gioiTinh;

@@ -19,19 +19,19 @@ $(document).ready(function(){
 	}
 	
 	var tabbar = $('#lisitems');
-	listObj = JSON.parse(listObj);
-	tachObj(listObj);
-	setListItem(listObj, tabbar);
-//	$.get("./hosothamdinhfv",
-//	{
-//	  name: "Donald Duck",
-//	  city: "Duckburg"
-//	}, function(data, status){
-//		var tabbar = $('#lisitems');
-//		listObj = JSON.parse(data);
-//		tachObj(listObj);
-//		setListItem(listObj, tabbar);
-//	});
+//	listObj = JSON.parse(listObj);
+//	tachObj(listObj);
+//	setListItem(listObj, tabbar);
+	$.get("./hosothamdinhfv",
+	{
+	  name: "Donald Duck",
+	  city: "Duckburg"
+	}, function(data, status){
+		var tabbar = $('#lisitems');
+		listObj = JSON.parse(data);
+		tachObj(listObj);
+		setListItem(listObj, tabbar);
+	});
 	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {

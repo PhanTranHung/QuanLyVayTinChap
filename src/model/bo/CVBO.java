@@ -26,5 +26,8 @@ public class CVBO {
 	public void DanhRot(String IDHoSo,String status) {
 		cvDao.DanhRot(IDHoSo, status);
 	}
+	public void nhanVienCv(String maNv, String idHoSo) {
+		cvDao.nhanVienCv(maNv, idHoSo);
+	}
 	
 }

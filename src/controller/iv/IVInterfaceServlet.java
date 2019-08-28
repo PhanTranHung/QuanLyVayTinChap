@@ -39,35 +39,21 @@ public class IVInterfaceServlet extends HttpServlet {
 		 */
 		HttpSession session = req.getSession();
 		String chucVu =(String) session.getAttribute("chucVu");
-		if (chucVu == null) {
+		
+		System.out.println(chucVu + " sale");
+		
+		if (chucVu == null || !chucVu.equals("iv")) {
+			resp.sendRedirect("./login");
+			return;
+		}
+		
 			RequestDispatcher rd = req.getRequestDispatcher("./IVOffice/iv.jsp");
 			req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.IV);
 			req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.IV_HANDLE);
 			req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.IV_INTERFACE);
 			rd.forward(req, resp);
 		
-		} else {
-			switch (chucVu) {
-			case "sale":
-				resp.sendRedirect("homesale");
-				break;
-			case "admin": 
-				resp.sendRedirect("homeadmin");
-				break;
-			case "cv": 
-				resp.sendRedirect("homecv");
-				break;
-			case "fv" : 
-				resp.sendRedirect("homefv");
-				break;
-			case "iv" : 
-				resp.sendRedirect("homeiv");
-				break ;
-			case "ro" : 
-				resp.sendRedirect("homero");
-				break ;
-			}
-		}
+	
 		
 	}
 

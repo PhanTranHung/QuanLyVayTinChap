@@ -13,5 +13,8 @@ public class AdminBO {
 	public void themCongTy(CongTy congTy) {
 		adminDao.themCongTy(congTy);
 	}
+	public void nhanVienAdmin(String maNv, String idHoSo) {
+		adminDao.nhanVienAdmin(maNv, idHoSo);
+	}
 	
 }

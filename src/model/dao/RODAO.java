@@ -18,8 +18,10 @@ public  List<TieuChi> listTieuChi(String idHoSo){
 		
 		List<TieuChi> list = new ArrayList<TieuChi>();
 		
-		String sql=	String.format("select TenTieuChi,Alias,Quyen,ThongTin,KQThamDinh from  TieuChi "
-				+ "inner join ThamDinh on TieuChi.IDTieuChi = ThamDinh.IDTieuChi ", idHoSo);
+		String sql=	String.format("select TenTieuChi,Alias,Quyen,ThongTin,KQThamDinh from  \r\n" + 
+				"	TieuChi inner join ThamDinh \r\n" + 
+				"	on TieuChi.IDTieuChi = ThamDinh.IDTieuChi \r\n" + 
+				"	where ThamDinh.IDHoSo = '%s'", idHoSo);
 		ResultSet rs = excuter.executeQuery(sql);
 		try {
 			while(rs.next()){

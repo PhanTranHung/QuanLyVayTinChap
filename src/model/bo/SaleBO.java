@@ -15,5 +15,8 @@ public class SaleBO {
 	public List<HoSoKhachHang> hoSoKhachHang(){
 		return saleDao.hoSoKhachHang();
 	}
+	public List<HoSoKhachHang> TimKiemKhachHang(HoSoKhachHang hsKH) {
+		return saleDao.TimKiemKhachHang(hsKH);
+	}
 
 }

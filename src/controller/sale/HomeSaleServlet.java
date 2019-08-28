@@ -5,16 +5,17 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 import common.JSFiles;
 import common.TypeOfUser;
 import common.Variable;
-import model.bean.CongTy;
+import model.bean.HoSoKhachHang;
 import model.bo.SaleBO;
 
 /**
@@ -43,41 +44,23 @@ public class HomeSaleServlet extends HttpServlet {
 		 */
 		HttpSession session = req.getSession();
 		String chucVu =(String) session.getAttribute("chucVu");
-		if (chucVu == null || chucVu=="sale") {
-			RequestDispatcher rd = req.getRequestDispatcher("sale.jsp");
-			req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.SALE_PERSONAL);
-			req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.SALE_HANDLE);
-			req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.SALE_INTERFACE);
-			rd.forward(req, resp);
 		
-		} else {
-			switch (chucVu) {
-			
-			case "admin": 
-				resp.sendRedirect("homeadmin");
-				break;
-			case "cv": 
-				resp.sendRedirect("homecv");
-				break;
-			case "fv" : 
-				resp.sendRedirect("homefv");
-				break;
-			case "iv" : 
-				resp.sendRedirect("homeiv");
-				break ;
-			case "ro" : 
-				resp.sendRedirect("homero");
-				break ;
-			}
+		System.out.println(chucVu + " sale");
+		
+		if (chucVu == null || !chucVu.equals("sale")) {
+			resp.sendRedirect("./login");
+			return;
 		}
 		
-		
-		
-		
+		RequestDispatcher rd = req.getRequestDispatcher("sale.jsp");
+		req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.SALE_PERSONAL);
+		req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.SALE_HANDLE);
+		req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.SALE_INTERFACE);
+		rd.forward(req, resp);
 		
 	}
 
-	/**
+	/*
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -88,11 +71,24 @@ public class HomeSaleServlet extends HttpServlet {
 		 * 		Chú ý: dựa vào typeofsubmit mà trả về danh sách tương ứng
 		 * 		nếu không có thông tin trả không tìm thấy
 		 */
-		String tenKhachHang = (String) request.getAttribute("ten");
-		String ngaySinh = (String) request.getAttribute("ngaysinh");
-		String cmnd = (String) request.getAttribute("socmnd");
+		String typeofsubmit = request.getParameter("typeofsubmit");
 		
-		response.getWriter().append(tenKhachHang+ngaySinh+cmnd);
+			
+			String tenKhachHang = (String) request.getAttribute("ten");
+			String ngaySinh = (String) request.getAttribute("ngaysinh");
+			String cmnd = (String) request.getAttribute("socmnd");
+			HoSoKhachHang khachHang = new HoSoKhachHang();
+			khachHang.setTenKH(tenKhachHang);
+			khachHang.setCmnd(cmnd);
+			khachHang.setNgaysinhStr(ngaySinh);
+		
+			SaleBO saleBo = new SaleBO();
+			List<HoSoKhachHang> list ;
+			list = saleBo.TimKiemKhachHang(khachHang);
+			
+			Gson gson = new Gson();
+			String json = gson.toJson(list);
+			response.getWriter().write(json);
 		
 	}
 

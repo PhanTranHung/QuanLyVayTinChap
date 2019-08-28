@@ -43,7 +43,7 @@
 						<div id='top' class="top">
 							<button class="btn btn-info">Logout</button>
 						</div>
-						<form action="HomeSaleServlet" method="post">
+						<form action="./homesale" method="post">
 							<div id="row" class="row">
 								<div class="col-sm-4 center">
 									<div class="col-input stickytop">
@@ -75,7 +75,7 @@
 											</div>
 										</div>
 										<div class="" style="text-align: center;">
-											<button id="btntimkiem" type="button" class="btn btn-info">
+											<button id="btntimkiem" type="submit" class="btn btn-info">
 										     	<span class="glyphicon glyphicon-search"></span> Search
 										    </button>
 											<input id="typeofsubmit" type="hidden" name="typeofsubmit" value="formkh">

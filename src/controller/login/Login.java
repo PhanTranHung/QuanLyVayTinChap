@@ -35,6 +35,9 @@ public class Login extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String chucVu =(String) session.getAttribute("chucVu");
+		
+		System.out.println(chucVu + " login");
+		
 		if (chucVu == null) {
 			RequestDispatcher rd = request.getRequestDispatcher("index.html");
 			rd.forward(request, response);
@@ -82,30 +85,27 @@ public class Login extends HttpServlet {
 		String chucVu = dangNhap[0];
 		String idNhanVien = dangNhap[1];
 		
+
+		session.setAttribute("idNhanVien", idNhanVien);
+		session.setAttribute("chucVu", chucVu);
+		
 		switch (chucVu) {
 		case "sale":
-			
-			session.setAttribute("chucVu", chucVu);
 			response.sendRedirect("homesale");
 			break;
 		case "admin": 
-			session.setAttribute("chucVu", chucVu);
 			response.sendRedirect("homeadmin");
 			break;
 		case "cv": 
-			session.setAttribute("chucVu", chucVu);
 			response.sendRedirect("homecv");
 			break;
 		case "fv" : 
-			session.setAttribute("chucVu", chucVu);
 			response.sendRedirect("homefv");
 			break;
 		case "iv" : 
-			session.setAttribute("chucVu", chucVu);
 			response.sendRedirect("homeiv");
 			break ;
 		case "ro" : 
-			session.setAttribute("chucVu", chucVu);
 			response.sendRedirect("homero");
 			break ;
 		}

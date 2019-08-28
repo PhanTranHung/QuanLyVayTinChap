@@ -44,35 +44,21 @@ public class CVInterfaceServlet extends HttpServlet {
 		 */
 		HttpSession session = req.getSession();
 		String chucVu =(String) session.getAttribute("chucVu");
-		if (chucVu == null) {
+		
+		System.out.println(chucVu + "cv");
+		
+		if (chucVu == null || !chucVu.equals("cv")) {
+			resp.sendRedirect("./login");
+			return;
+		}
+		
 			RequestDispatcher rd = req.getRequestDispatcher("./CVOffice/cv.jsp");
 			req.setAttribute(Variable.TYPE_OF_USER, TypeOfUser.CV);
 			req.setAttribute(Variable.THE_JSFILE_INTERFACE, JSFiles.CV_INTERFACE);
 			req.setAttribute(Variable.THE_JSFILE_HANDLE, JSFiles.CV_HANDLE);
 			rd.forward(req, resp);
 		
-		} else {
-			switch (chucVu) {
-			case "sale":
-				resp.sendRedirect("homesale");
-				break;
-			case "admin": 
-				resp.sendRedirect("homeadmin");
-				break;
-			case "cv": 
-				resp.sendRedirect("homecv");
-				break;
-			case "fv" : 
-				resp.sendRedirect("homefv");
-				break;
-			case "iv" : 
-				resp.sendRedirect("homeiv");
-				break ;
-			case "ro" : 
-				resp.sendRedirect("homero");
-				break ;
-			}
-		}
+		
 		
 	}
 	

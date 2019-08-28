@@ -1,24 +1,26 @@
 package model.bean;
 
-public class HoSoIV {
-	String idHoSo ;
+import java.util.Date;
+
+public class HoSoIV extends HoSoKhachHang{
 	String sdt ;
 	String diaChi;
+	int trangThai ;
 	
+	public int getTrangThai() {
+		return trangThai;
+	}
+	public void setTrangThai(int trangThai) {
+		this.trangThai = trangThai;
+	}
 	public HoSoIV() {
 		
 	}
-	public HoSoIV(String idHoSo, String sdt, String diaChi) {
-		super();
+	public HoSoIV(String tenKH, String cmnd, Date ngaySinh, boolean gioiTinh, String idHoSo, String sdt, String diaChi) {
+		super(tenKH, cmnd, ngaySinh, gioiTinh);
 		this.idHoSo = idHoSo;
 		this.sdt = sdt;
 		this.diaChi = diaChi;
-	}
-	public String getIdHoSo() {
-		return idHoSo;
-	}
-	public void setIdHoSo(String idHoSo) {
-		this.idHoSo = idHoSo;
 	}
 	public String getSdt() {
 		return sdt;

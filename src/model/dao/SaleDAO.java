@@ -69,6 +69,41 @@ public class SaleDAO {
 		
 		return list;
 	}
+	public List<HoSoKhachHang> TimKiemKhachHang(HoSoKhachHang hsKH) {
+		
+		List<HoSoKhachHang> list = new ArrayList<>();
+		ExcuteDB excuter = new ExcuteDB();
+		String sql=	String.format("select KhachHang.CMNDKhachHang,KhachHang.Ten,HoSo.TrangThai,HoSo.GhiChu\r\n" + 
+				"	 from KhachHang inner join HoSo \r\n" + 
+				"	 on KhachHang.CMNDKhachHang = HoSo.CMNDKhachHang\r\n" + 
+				"	 where KhachHang.Ten like '' or KhachHang.NgaySinh like '' or KhachHang.CMNDKhachHang like '' ;"
+				,hsKH.getTenKH(),hsKH.getNgaysinhStr(),hsKH.getCmnd());
+		ResultSet rs = excuter.executeQuery(sql);
+		try {
+			while(rs.next()){
+				HoSoKhachHang hskh = new HoSoKhachHang();
+				hskh.setCmnd(rs.getString("CMNDKhachHang"));
+				hskh.setTenKH(rs.getString("Ten"));
+				hskh.setNgaysinhStr(rs.getString("NgaySinh"));
+				hskh.setTinhTrang(rs.getString("TrangThai"));
+				hskh.setGhiChu(rs.getString("GhiChu"));
+				
+				if (rs.getInt("GioiTinh")==1) {
+					hskh.setGioiTinh(true);
+				}else {
+					hskh.setGioiTinh(false);
+				}
+				
+				
+				list.add(hskh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
+	}
 
 
 }

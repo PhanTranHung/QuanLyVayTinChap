@@ -69,7 +69,7 @@ public class HoSoThamDinhFVServlet extends HttpServlet {
 			break;
 	}
 
-	resp.sendRedirect("./homecv");
+	resp.sendRedirect("./homefv");
 
 	}
 	/**

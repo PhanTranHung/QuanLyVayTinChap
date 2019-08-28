@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
@@ -45,7 +46,7 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 		
 		String idHoSo = req.getParameter("idHoSo"); 
 		String submit = req.getParameter("submit");
-		
+		HttpSession session = req.getSession();
 		List<TieuChi> listAllTenTieuChi = cvBo.listAllTenTieuChi();
 		int listSize = listAllTenTieuChi.size();
 
@@ -54,7 +55,9 @@ public class HoSoThamDinhCVServlet extends HttpServlet{
 			String val = req.getParameter(tieuchi.getAlias());
 			cvBo.ThamDinh(val, idHoSo, tieuchi.getTenTC());
 		}
-		
+		String idNhanVien =(String) session.getAttribute("idNhanVien");
+//		System.out.println(idNhanVien);
+		cvBo.nhanVienCv(idNhanVien, idHoSo);
 		switch(submit) {
 			case "reject" :
 				String status = req.getParameter("status");

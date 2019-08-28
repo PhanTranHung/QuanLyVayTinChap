@@ -51,4 +51,13 @@ public class AdminDAO {
 	 excuter.executeUpdate(sql);
 	}
 	
+	public void nhanVienAdmin(String maNv, String idHoSo) {
+		ExcuteDB excuter = new ExcuteDB();
+		String sql1 = String.format("update HoSo \r\n" + 
+				"  set MaNVAdmin = '%s'\r\n" + 
+				"  where IDHoSo = '%s' ", maNv,idHoSo);
+		System.out.println(sql1);
+		excuter.executeUpdate(sql1);
+	}
+	
 }
