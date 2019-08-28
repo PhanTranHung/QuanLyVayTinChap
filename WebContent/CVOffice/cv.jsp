@@ -29,7 +29,6 @@
 								<input class="search" id='search' type="text" name="search" placeholder="Search">
 								<span id="searchreset" class="btnreset">x</span>
 							</div>
-	
 						</div>
 					</div>
 					<div class="leftmenuinner">

@@ -29,10 +29,10 @@
 						<div class="horizontaltabinner">
 							<div class="listitems">
 								<div class="iteminleftmenu">
-									<a id="formkh" href="#012345" class="itemselected">Tìm thông tin khách hàng</a>
+									<a id="formcty" href="#tablecty" class="itemselected">Tìm thông tin công ty</a>
 								</div>
 								<div class="iteminleftmenu">
-									<a id="formcty" href="#012345">Tìm thông tin công ty</a>
+									<a id="formkh" href="#tablekh">Tìm thông tin khách hàng</a>
 								</div>
 							</div>
 						</div>
@@ -45,7 +45,7 @@
 						</div>
 						<form action="./homesale" method="post">
 							<div id="row" class="row">
-								<div class="col-sm-4 center">
+								<div class="col-sm-3 center">
 									<div class="col-input stickytop">
 										<div class="inputitem">
 											<label for="inputitem1">Tên khách hàng</label>										
@@ -82,14 +82,54 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-8 center">
+								<div id="tablecty" class="col-sm-9 center">
 									<div class="container table">
 										<div class="row th stickytop">
-											<div class="col-sm-5">
-												Tiêu chí
+											<div class="col-sm-4">
+												Tên
 											</div>
-											<div class="col-sm-7">
-												Thông tin
+											<div class="col-sm-2">
+												Mã số thuế
+											</div>
+											<div class="col-sm-4">
+												Địa chỉ
+											</div>
+											<div class="col-sm-2">
+												Tình trạng
+											</div>
+										</div>
+										<div id="tablecontent">
+											<div class="row tr">
+												<div class="col-sm-5">
+													Tên khách hàng
+												</div>
+												<div class="col-sm-7">
+													Zoãn Chí Bình
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="tablekh" class="col-sm-9 center" style="display: none;">
+									<div class="container table">
+										<div class="row th stickytop">
+											<div class="col-sm-2">
+												Tên
+											</div>
+											<div class="col-sm-2">
+												Hộ chiếu
+											</div>
+											<div class="col-sm-2">
+												Ngày sinh
+											</div>
+											<div class="col-sm-2">
+												Giới tính
+											</div>
+											<div class="col-sm-2">
+												Trạng thái
+											</div>
+											<div class="col-sm-2">
+												Tình trạng
 											</div>
 										</div>
 										<div id="tablecontent">

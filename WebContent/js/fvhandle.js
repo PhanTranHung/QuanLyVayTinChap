@@ -33,6 +33,17 @@ $(document).ready(function(){
 		setListItem(listObj, tabbar);
 	});
 	
+	function initializationevent(){
+		$("#lisitems .iteminleftmenu a").click(function() {
+			let id = $(this).attr("href").replace("#", "");
+			if (lastIDSelected != id){
+				lastIDSelected = id;
+				containerTable.children().remove(".row.tr")
+				lietKeThongTin(listObj[id]);
+			}
+		});
+	};
+	
 	function setListItem(listObj, container, condition){
 		$.each(listObj, function(k, v) {
 			if (condition == undefined || v.trangThai == condition){
@@ -44,6 +55,7 @@ $(document).ready(function(){
 					container.append(item);
 			}
 		});
+		initializationevent();
 	};
 	
 	emptyTabbar = () => {
@@ -65,22 +77,8 @@ $(document).ready(function(){
 			default: console.log("ko dc");
 		}
 		setListItem(listSelected, tabbar);
-		
 		initializationevent();
 	});
-	
-	initializationevent = () => {
-		$("#lisitems .iteminleftmenu a").click(function() {
-			let id = $(this).attr("href").replace("#", "");
-			if (lastIDSelected != id){
-				lastIDSelected = id;
-				containerTable.children().remove(".row.tr")
-				lietKeThongTin(listObj[id]);
-			}
-		});
-	};
-	
-	initializationevent();
 	
 	lietKeThongTin = (info) => {
 		containerTable.append(themrow("Tên khách hàng", info.tenKH).append($("<input type='hidden' name='idHoSo' value='" + info.idHoSo + "'/>")));
